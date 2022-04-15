@@ -9,10 +9,12 @@ public class ElectricityBillPaymentAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ElectricityBillPaymentAppApplication.class, args);
 
+
 		System.out.println("this is me dude");
    
 
 
+ 
 	}
 
 }
