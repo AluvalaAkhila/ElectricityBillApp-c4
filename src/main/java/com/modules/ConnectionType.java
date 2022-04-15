@@ -1,5 +1,5 @@
 package com.modules;
 
-public class ConnectionType {
+public enum ConnectionType {
 
 }

@@ -1,5 +1,5 @@
 package com.modules;
 
-public class PaymentMode {
+public enum PaymentMode {
 
 }
