@@ -10,6 +10,15 @@ public class ElectricityBillPaymentAppApplication {
 		SpringApplication.run(ElectricityBillPaymentAppApplication.class, args);
 
 
+		System.out.println("this is me friend");
+        System.out.println("hi project");
+		System.out.println("Hi its working for me ");
+		System.out.println("merging?");
+        System.out.println("okieee");
+        System.out.println("myself");
+        System.out.println("1230");
+
+
 		System.out.println("this is me dude");
    
 
