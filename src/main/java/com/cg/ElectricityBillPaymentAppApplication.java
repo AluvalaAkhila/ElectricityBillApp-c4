@@ -9,7 +9,17 @@ public class ElectricityBillPaymentAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ElectricityBillPaymentAppApplication.class, args);
 
+
 		System.out.println("hello");
+
+
+
+		System.out.println("pojo classes done");
+
+		
+   
+
+
 
  
 	}
