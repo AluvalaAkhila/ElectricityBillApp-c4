@@ -23,6 +23,7 @@ public class Connection {
 	@JoinColumn(referencedColumnName = "addressId" , name="addressid")
 	private Address connectionAddress;
 	
+	
 	private ConnectionType connectionType;
 	
 	@OneToOne(cascade = CascadeType.ALL)

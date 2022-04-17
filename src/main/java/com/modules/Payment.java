@@ -6,6 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+
+
 public class Payment {
 	
 	private long paymentId;
@@ -16,10 +18,13 @@ public class Payment {
 	
 	private LocalDate paymentDate;
 	
+	
 	private PaymentMode paymentMode;
 	
 	private double latePaymentCharges;
 	private double totalPaid;
+	
+	
 	private PaymentStatus status;
 	
 	public Payment() {
