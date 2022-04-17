@@ -6,8 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-
-
 public class Connection {
 	private long connectionId;
 	private long consumerNumber;
