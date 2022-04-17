@@ -8,8 +8,24 @@ public class Connection {
 	private LocalDate applicationDate;
 	private LocalDate connectionDate;
 	private  boolean connectionStatus;
+	private Address address;
+	private ConnectionType connectiontype;
 	public Connection() {
 	}
+	
+	public ConnectionType getConnectiontype() {
+		return connectiontype;
+	}
+	public void setConnectiontype(ConnectionType connectiontype) {
+		this.connectiontype = connectiontype;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 	public long getConnectionId() {
 		return connectionId;
 	}
@@ -39,6 +55,17 @@ public class Connection {
 	}
 	public void setConnectionStatus(boolean connectionStatus) {
 		this.connectionStatus = connectionStatus;
+	}
+
+	public Connection(long connectionId, long consumerNumber, LocalDate applicationDate, LocalDate connectionDate,
+			boolean connectionStatus, Address address, ConnectionType connectiontype) {
+		this.connectionId = connectionId;
+		this.consumerNumber = consumerNumber;
+		this.applicationDate = applicationDate;
+		this.connectionDate = connectionDate;
+		this.connectionStatus = connectionStatus;
+		this.address = address;
+		this.connectiontype = connectiontype;
 	}
 
 }

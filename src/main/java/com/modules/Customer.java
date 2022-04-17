@@ -61,5 +61,18 @@ public class Customer extends User {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
-	}		
+	}
+	public Customer(long customerid, long aadharNumber, String firstName, String middleName, String lastName,
+			String email, long mobileNumber, String gender) {
+		super();
+		this.customerid = customerid;
+		this.aadharNumber = aadharNumber;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.email = email;
+		this.mobileNumber = mobileNumber;
+		this.gender = gender;
+	}	
+	
 }
