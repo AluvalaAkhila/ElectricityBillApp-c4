@@ -17,6 +17,37 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	
+	 // https://mvnrepository.com/artifact/org.postgresql/postgresql
+     implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.3'
+     
+     // https://mvnrepository.com/artifact/org.springframework/spring-core
+     implementation group: 'org.springframework', name: 'spring-core', version: '5.3.18'
+     
+     // https://mvnrepository.com/artifact/org.springframework/spring-context
+     implementation group: 'org.springframework', name: 'spring-context', version: '5.3.18'
+     
+     // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.18'
+     
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.6.6'
+	
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+    implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.6.7.Final'
+    
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.7.Final'
+    
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web-services
+    implementation 'org.springframework.boot:spring-boot-starter-web-services:2.6.6'
+    
+    // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
+    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '7.0.4.Final'
+    
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '
 	// https://mvnrepository.com/artifact/org.springframework/spring-webmvc
 	implementation 'org.springframework:spring-webmvc:5.3.18'
 	
@@ -44,6 +75,7 @@ implementation 'org.springframework.boot:spring-boot-starter-web-services:2.6.6'
 // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
 implementation 'org.hibernate:hibernate-validator:7.0.4.Final'
 	
+
 }
 
 tasks.named('test') {

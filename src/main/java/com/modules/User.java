@@ -1,5 +1,9 @@
 package com.modules;
 
+import javax.persistence.Entity;
+
+@Entity
+
 public class User {
 	private long userId;
 	private String userName;
@@ -7,11 +11,18 @@ public class User {
 	
 	public User() {
 	}
+	
+	public User(long userId, String userName, String password) {
+		this.userId = userId;
+		this.userName = userName;
+		this.password = password;
+	}
+
+
 
 	public long getUserId() {
 		return userId;
 	}
-	
 	public void setUserId(long userId) {
 		this.userId = userId;
 	}
@@ -27,6 +38,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + "]";
+	}
+	
+	
 	
 
 }
