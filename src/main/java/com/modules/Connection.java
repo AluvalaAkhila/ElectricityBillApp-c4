@@ -6,6 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+
+
 public class Connection {
 	private long connectionId;
 	private long consumerNumber;
@@ -16,6 +18,7 @@ public class Connection {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "addressId" , name="addressid")
 	private Address connectionAddress;
+	
 	
 	private ConnectionType connectionType;
 	
