@@ -6,7 +6,6 @@ public class Customer extends User {
 	private	String firstName;
 	private String middleName;
 	private String lastName;
-	private String userName;
 	private String email;
 	private long mobileNumber;
 	private String gender;
@@ -44,12 +43,7 @@ public class Customer extends User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+	
 	public String getEmail() {
 		return email;
 	}
