@@ -1,5 +1,8 @@
 package com.repositories;
 
-public interface ConnectionDao {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ConnectionDao  {
 
 }

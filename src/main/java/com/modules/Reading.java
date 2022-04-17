@@ -2,12 +2,22 @@ package com.modules;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
+
 public class Reading {
 private long readingId;
 private int unitsConsumed;
 private String readingPhoto;
 private LocalDate readingDate;
 private int pricePerUnits;
+
+@OneToOne(cascade = CascadeType.ALL)
+@JoinColumn(referencedColumnName = "connectionId" , name="connectionid")
 private Connection readingForConnection;
 
 public Reading() {
