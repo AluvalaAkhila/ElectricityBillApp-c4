@@ -8,24 +8,11 @@ public class Connection {
 	private LocalDate applicationDate;
 	private LocalDate connectionDate;
 	private  boolean connectionStatus;
-	private Address address;
-	private ConnectionType connectiontype;
+	private Address ConnectionAddress;
+	private ConnectionType ConnectionType;
 	public Connection() {
 	}
-	
-	public ConnectionType getConnectiontype() {
-		return connectiontype;
-	}
-	public void setConnectiontype(ConnectionType connectiontype) {
-		this.connectiontype = connectiontype;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	
+
 	public long getConnectionId() {
 		return connectionId;
 	}
@@ -55,17 +42,40 @@ public class Connection {
 	}
 	public void setConnectionStatus(boolean connectionStatus) {
 		this.connectionStatus = connectionStatus;
-	}
+	}	
+public Address getConnectionAddress() {
+	return ConnectionAddress;
+}
+public void setConnectionAddress(Address connectionAddress) {
+	ConnectionAddress = connectionAddress;
+}
+public ConnectionType getConnectionType() {
+	return ConnectionType;
+}
+public void setConnectionType(ConnectionType connectionType) {
+	ConnectionType = connectionType;
+}
 
-	public Connection(long connectionId, long consumerNumber, LocalDate applicationDate, LocalDate connectionDate,
-			boolean connectionStatus, Address address, ConnectionType connectiontype) {
-		this.connectionId = connectionId;
-		this.consumerNumber = consumerNumber;
-		this.applicationDate = applicationDate;
-		this.connectionDate = connectionDate;
-		this.connectionStatus = connectionStatus;
-		this.address = address;
-		this.connectiontype = connectiontype;
-	}
+public Connection(long connectionId, long consumerNumber, LocalDate applicationDate, LocalDate connectionDate,
+		boolean connectionStatus, Address connectionAddress, com.modules.ConnectionType connectionType) {
+	super();
+	this.connectionId = connectionId;
+	this.consumerNumber = consumerNumber;
+	this.applicationDate = applicationDate;
+	this.connectionDate = connectionDate;
+	this.connectionStatus = connectionStatus;
+	ConnectionAddress = connectionAddress;
+	ConnectionType = connectionType;
+}
+
+@Override
+public String toString() {
+	return "Connection [connectionId=" + connectionId + ", consumerNumber=" + consumerNumber + ", applicationDate="
+			+ applicationDate + ", connectionDate=" + connectionDate + ", connectionStatus=" + connectionStatus
+			+ ", ConnectionAddress=" + ConnectionAddress + ", ConnectionType=" + ConnectionType + "]";
+}
+
+
+	
 
 }
