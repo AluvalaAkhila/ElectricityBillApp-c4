@@ -10,11 +10,15 @@ public class ElectricityBillPaymentAppApplication {
 		SpringApplication.run(ElectricityBillPaymentAppApplication.class, args);
 
 
+		System.out.println("hello");
+
+
 
 		System.out.println("pojo classes done");
 
 		
    
+
 
 
  
