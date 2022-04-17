@@ -1,7 +1,20 @@
 package com.modules;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name="customerTable")
 public class Customer extends User {
+	@Id
 	private long customerid;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(referencedColumnName="cid",name="conn_id")
 	private long aadharNumber;
 	private	String firstName;
 	private String middleName;

@@ -2,7 +2,13 @@ package com.modules;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="connectionTable")
 public class Connection {
+	@Id
 	private long connectionId;
 	private long consumerNumber;
 	private LocalDate applicationDate;
