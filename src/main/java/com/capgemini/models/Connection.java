@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-
+@Entity
 public class Connection {
 	@Id
 	private long connectionId;
@@ -19,15 +19,15 @@ public class Connection {
 	private LocalDate connectionDate;
 	private  boolean connectionStatus;
 	
-//	@OneToOne(cascade = CascadeType.ALL)
-	//@JoinColumn(referencedColumnName = "addressId" , name="addressid")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(referencedColumnName = "addressId" , name="addressid")
 	private Address connectionAddress;
 	
 	
 	private ConnectionType connectionType;
 	
-	//@OneToOne(cascade = CascadeType.ALL)
-	//@JoinColumn(referencedColumnName = "customerId" ,name="customerid")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(referencedColumnName = "customerId" ,name="customerid")
 	private Customer customerConnection;
 	
 	public Connection() {

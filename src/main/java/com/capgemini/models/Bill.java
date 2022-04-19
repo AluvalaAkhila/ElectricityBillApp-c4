@@ -18,8 +18,8 @@ public class Bill {
 	private int unitsConsumed;
 	private int billAmount;
 	
-	//@OneToOne (cascade = CascadeType.ALL)
-	//@JoinColumn(referencedColumnName = "readingId" , name="readingid")
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn(referencedColumnName = "readingId" , name="readingid")
 	private Reading billForReading;
 	
 	public Bill() {

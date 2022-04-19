@@ -13,8 +13,8 @@ public class Payment {
 	@Id
 	private long paymentId;
 	
-	//@OneToOne (cascade = CascadeType.ALL)
-	//@JoinColumn(referencedColumnName = "billId" , name="billid")
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn(referencedColumnName = "billId" , name="billid")
 	private Bill bill;
 	
 	private LocalDate paymentDate;

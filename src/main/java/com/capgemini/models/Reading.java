@@ -18,8 +18,8 @@ private String readingPhoto;
 private LocalDate readingDate;
 private int pricePerUnits;
 
-//@OneToOne(cascade = CascadeType.ALL)
-//@JoinColumn(referencedColumnName = "connectionId" , name="connectionid")
+@OneToOne(cascade = CascadeType.ALL)
+@JoinColumn(referencedColumnName = "connectionId" , name="connectionid")
 private Connection readingForConnection;
 
 public Reading() {

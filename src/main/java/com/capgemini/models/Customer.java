@@ -11,10 +11,10 @@ import javax.validation.constraints.Size;
 
 @Entity
 
-public class Customer extends User {
+public class Customer extends Users {
 
 	private long customerid;
-	// @OneToOne(cascade=CascadeType.ALL)
+	//@OneToOne(cascade=CascadeType.ALL)
 	// @JoinColumn(referencedColumnName="cid",name="conn_id")
 
 	private long aadharNumber;
