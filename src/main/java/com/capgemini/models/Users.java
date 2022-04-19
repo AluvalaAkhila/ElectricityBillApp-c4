@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Users {
 	@Id
+
 	private long userId;
 	private String userName;
 	private String password;
