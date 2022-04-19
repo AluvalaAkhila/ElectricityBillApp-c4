@@ -1,15 +1,23 @@
-package com.modules;
+package com.capgemini.modules;
 
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Entity
 
 
 
 public class Payment {
 	
+	@Id
 	private long paymentId;
 	
 	@OneToOne (cascade = CascadeType.ALL)
@@ -18,13 +26,13 @@ public class Payment {
 	
 	private LocalDate paymentDate;
 	
-	
+	@Autowired
 	private PaymentMode paymentMode;
 	
 	private double latePaymentCharges;
 	private double totalPaid;
 	
-	
+	@Autowired
 	private PaymentStatus status;
 	
 	public Payment() {

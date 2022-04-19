@@ -1,15 +1,18 @@
-package com.modules;
+package com.capgemini.modules;
 
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
 
 @Entity
 
 public class Bill {
+	@Id
 	private long billId;
 	private LocalDate billDate;
 	private LocalDate billDueDate;

@@ -1,26 +1,17 @@
-package com.modules;
+package com.capgemini.modules;
 
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.Size;
+
 
 @Entity
 
-public class Customer extends User {
+public class Customer extends Users {
 
-	@Id
-	private long customerid;
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(referencedColumnName="cid",name="conn_id")
-
+	
 	private long customerId;
-
-	private long aadharNumber;
+    private long aadharNumber;
 	private	String firstName;
 	private String middleName;
 	private String lastName;
@@ -35,6 +26,7 @@ public class Customer extends User {
 
 	public Customer(long customerId, long aadharNumber, String firstName, String middleName, String lastName,
 			String email, long mobileNumber, String gender) {
+		
 		this.customerId = customerId;
 		this.aadharNumber = aadharNumber;
 		this.firstName = firstName;

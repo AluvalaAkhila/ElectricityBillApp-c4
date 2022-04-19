@@ -1,10 +1,13 @@
-package com.modules;
+package com.capgemini.modules;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+
 
 @Entity
 
 public class Address {
+	@Id
 	private long addressId;
 	private int faltOrHouseNumber;
 	private String buildingName;

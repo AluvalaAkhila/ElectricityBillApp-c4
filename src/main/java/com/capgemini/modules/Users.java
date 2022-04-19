@@ -1,18 +1,24 @@
-package com.modules;
+package com.capgemini.modules;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 
 @Entity
 
-public class User {
+@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
+public class Users {
+	@Id
 	private long userId;
 	private String userName;
 	private String password;
 	
-	public User() {
+	public Users() {
 	}
 	
-	public User(long userId, String userName, String password) {
+	public Users(long userId, String userName, String password) {
 		this.userId = userId;
 		this.userName = userName;
 		this.password = password;

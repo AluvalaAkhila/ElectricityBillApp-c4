@@ -5,7 +5,7 @@ plugins {
 	id 'war'
 }
 
-group = 'com.cg'
+group = 'com.springmvc'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -17,9 +17,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
 	
-	 // https://mvnrepository.com/artifact/org.postgresql/postgresql
+	  // https://mvnrepository.com/artifact/org.postgresql/postgresql
      implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.3'
      
      // https://mvnrepository.com/artifact/org.springframework/spring-core
@@ -47,7 +46,9 @@ dependencies {
     implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '7.0.4.Final'
     
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
-   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '
+   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.6.6'
+    
+    
 	
 }
 
