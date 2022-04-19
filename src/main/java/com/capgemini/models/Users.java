@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="usertable")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-
 public class Users {
 	@Id
 	private long userId;
