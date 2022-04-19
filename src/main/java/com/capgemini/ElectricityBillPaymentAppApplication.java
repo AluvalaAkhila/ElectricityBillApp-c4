@@ -11,6 +11,7 @@ public class ElectricityBillPaymentAppApplication {
 
 
 		System.out.println("table created");
+		
 
 
 		
