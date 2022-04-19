@@ -1,4 +1,4 @@
-package com.repositories;
+package com.capgemini.repositories;
 
 import org.springframework.stereotype.Repository;
 

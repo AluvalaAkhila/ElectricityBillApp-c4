@@ -1,4 +1,4 @@
-package com.controllers;
+package com.capgemini.controller;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.modules.Customer;
-import com.services.CustomerService;
+import com.capgemini.models.Customer;
+import com.capgemini.services.CustomerService;
 
 	@RestController
 	//@RequestMapping("/Customer")
@@ -17,6 +17,6 @@ import com.services.CustomerService;
 	CustomerService service;
 	@RequestMapping(value="/retrieves",method=RequestMethod.GET)
 	public List<Customer> getAllCustomer(){
-	return service.getAllCustomer();
+	return ((CustomerController) service).getAllCustomer();
 	}
 }

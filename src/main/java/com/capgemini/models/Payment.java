@@ -1,19 +1,21 @@
-package com.modules;
+package com.capgemini.models;
 
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 
-
+@Entity
 public class Payment {
-	
+	@Id
 	private long paymentId;
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn(referencedColumnName = "billId" , name="billid")
+	//@OneToOne (cascade = CascadeType.ALL)
+	//@JoinColumn(referencedColumnName = "billId" , name="billid")
 	private Bill bill;
 	
 	private LocalDate paymentDate;

@@ -1,23 +1,25 @@
-package com.modules;
+package com.capgemini.models;
 
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
 
 public class Reading {
+	@Id
 private long readingId;
 private int unitsConsumed;
 private String readingPhoto;
 private LocalDate readingDate;
 private int pricePerUnits;
 
-@OneToOne(cascade = CascadeType.ALL)
-@JoinColumn(referencedColumnName = "connectionId" , name="connectionid")
+//@OneToOne(cascade = CascadeType.ALL)
+//@JoinColumn(referencedColumnName = "connectionId" , name="connectionid")
 private Connection readingForConnection;
 
 public Reading() {

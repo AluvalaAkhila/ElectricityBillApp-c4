@@ -1,23 +1,25 @@
-package com.modules;
+package com.capgemini.models;
 
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
 
 public class Bill {
+	@Id
 	private long billId;
 	private LocalDate billDate;
 	private LocalDate billDueDate;
 	private int unitsConsumed;
 	private int billAmount;
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn(referencedColumnName = "readingId" , name="readingid")
+	//@OneToOne (cascade = CascadeType.ALL)
+	//@JoinColumn(referencedColumnName = "readingId" , name="readingid")
 	private Reading billForReading;
 	
 	public Bill() {

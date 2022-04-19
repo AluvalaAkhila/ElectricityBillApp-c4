@@ -1,4 +1,4 @@
-package com.cg;
+package com.capgemini;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ public class ElectricityBillPaymentAppApplication {
 		SpringApplication.run(ElectricityBillPaymentAppApplication.class, args);
 
 
-		System.out.println("hello");
+		System.out.println("table created");
 
 
-		System.out.println("pojo classes done");
+		
 
 		
    

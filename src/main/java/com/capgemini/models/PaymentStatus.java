@@ -1,4 +1,4 @@
-package com.modules;
+package com.capgemini.models;
 
 public enum PaymentStatus {
 	

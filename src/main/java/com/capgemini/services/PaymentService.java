@@ -1,4 +1,4 @@
-package com.services;
+package com.capgemini.services;
 
 public interface PaymentService {
 

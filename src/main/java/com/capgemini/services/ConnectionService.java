@@ -1,8 +1,8 @@
-package com.services;
+package com.capgemini.services;
 
 import java.util.List;
 
-import com.modules.Connection;
+import com.capgemini.models.Connection;
 
 public interface ConnectionService {
 

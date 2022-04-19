@@ -1,4 +1,4 @@
-package com.modules;
+package com.capgemini.models;
 
 import java.time.LocalDate;
 
@@ -19,15 +19,15 @@ public class Connection {
 	private LocalDate connectionDate;
 	private  boolean connectionStatus;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(referencedColumnName = "addressId" , name="addressid")
+//	@OneToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(referencedColumnName = "addressId" , name="addressid")
 	private Address connectionAddress;
 	
 	
 	private ConnectionType connectionType;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(referencedColumnName = "customerId" ,name="customerid")
+	//@OneToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(referencedColumnName = "customerId" ,name="customerid")
 	private Customer customerConnection;
 	
 	public Connection() {
