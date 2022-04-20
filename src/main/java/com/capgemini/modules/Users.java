@@ -25,8 +25,6 @@ public class Users {
 		this.password = password;
 	}
 
-
-
 	public long getUserId() {
 		return userId;
 	}

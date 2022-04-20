@@ -28,7 +28,7 @@ public class AddressController {
 	}
 	
 	@RequestMapping(value="/address/{id}",method=RequestMethod.GET)
-	public Address getAddressById(@PathVariable int id)
+	public Address getAddressById(@PathVariable long id)
 	{
 		return service.getAddressById(id);
 	}
@@ -42,13 +42,13 @@ public class AddressController {
 	}
 	
 	@RequestMapping(value="/update/{id}",method=RequestMethod.PUT)
-	public Address updateAddress(@PathVariable int id,@RequestBody Address e)
+	public Address updateAddress(@PathVariable long id,@RequestBody Address e)
 	{
 		return service.updateAddress(id,e);
 	}
 	
 	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
-	public void  deleteAddress(@PathVariable int id)
+	public void  deleteAddress(@PathVariable long id)
 	{
 		service.deleteAddress(id);
 	}

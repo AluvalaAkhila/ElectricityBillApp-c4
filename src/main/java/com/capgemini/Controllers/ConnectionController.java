@@ -29,7 +29,7 @@ public class ConnectionController {
 	}
 	
 	@RequestMapping(value="/connection/{id}",method=RequestMethod.GET)
-	public Connection getConnectionById(@PathVariable int id)
+	public Connection getConnectionById(@PathVariable long id)
 	{
 		return service.getConnectionById(id);
 	}
@@ -43,13 +43,13 @@ public class ConnectionController {
 	}
 	
 	@RequestMapping(value="/update/{id}",method=RequestMethod.PUT)
-	public Connection updateConnection(@PathVariable int id,@RequestBody Connection e)
+	public Connection updateConnection(@PathVariable long id,@RequestBody Connection e)
 	{
 		return service.updateConnection(id,e);
 	}
 	
 	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
-	public void  deleteConnection(@PathVariable int id)
+	public void  deleteConnection(@PathVariable long id)
 	{
 		service.deleteConnection(id);
 	}

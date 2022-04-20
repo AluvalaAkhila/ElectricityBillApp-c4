@@ -1,5 +1,7 @@
 package com.capgemini.services;
 
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ public class UserService {
 		return repository.findAll();
 	}
 	
-	public Users getUsersById(int id)
+	public Users getUsersById(long id)
 	{
 		return repository.findById(id).get();
 	}
@@ -31,7 +33,7 @@ public class UserService {
 	
 	
 	
-	public Users updateUsers(int id,Users e)
+	public Users updateUsers(long id,Users e)
 	{
 		Users e1 = repository.findById(id).get();
 		if(e1 !=null)
@@ -45,7 +47,7 @@ public class UserService {
 			return e1;
 	}
 	
-	public void deleteUsers(int id)
+	public void deleteUsers(long id)
 	{
 	Users e1 = repository.findById(id).get();
 	
@@ -57,6 +59,7 @@ public class UserService {
 		repository.delete(e1);
 	    System.out.println("deletion sucessfull");
 	}
+
 
 
 

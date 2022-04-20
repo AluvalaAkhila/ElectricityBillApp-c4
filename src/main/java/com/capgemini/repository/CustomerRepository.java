@@ -7,6 +7,6 @@ import com.capgemini.modules.Customer;
 
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer , Integer> {
+public interface CustomerRepository extends JpaRepository<Customer , Long> {
 
 }

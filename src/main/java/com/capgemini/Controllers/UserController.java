@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.capgemini.modules.Users;
 import com.capgemini.services.UserService;
 
-
-
-
 @RestController
 @RequestMapping("/uc")
 
@@ -29,7 +26,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/users/{id}",method=RequestMethod.GET)
-	public Users getStudentById(@PathVariable int id)
+	public Users getStudentById(@PathVariable long id)
 	{
 		return service.getUsersById(id);
 	}
@@ -43,13 +40,13 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/update/{id}",method=RequestMethod.PUT)
-	public Users updateStudent(@PathVariable int id,@RequestBody Users e)
+	public Users updateStudent(@PathVariable long id,@RequestBody Users e)
 	{
 		return service.updateUsers(id,e);
 	}
 	
 	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
-	public void  deleteStudent(@PathVariable int id)
+	public void  deleteStudent(@PathVariable long id)
 	{
 		service.deleteUsers(id);
 	}

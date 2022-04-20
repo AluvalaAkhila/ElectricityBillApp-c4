@@ -18,7 +18,7 @@ public class AddressService {
 		return repository.findAll();
 	}
 	
-	public Address getAddressById(int id)
+	public Address getAddressById(long id)
 	{
 		return repository.findById(id).get();
 	}
@@ -30,7 +30,7 @@ public class AddressService {
 	
 	
 	
-	public Address updateAddress(int id,Address e)
+	public Address updateAddress(long id,Address e)
 	{
 		Address e1 = repository.findById(id).get();
 		if(e1 !=null)
@@ -50,7 +50,7 @@ public class AddressService {
 			return e1;
 	}
 	
-	public void deleteAddress(int id)
+	public void deleteAddress(long id)
 	{
 	Address e1 = repository.findById(id).get();
 	
