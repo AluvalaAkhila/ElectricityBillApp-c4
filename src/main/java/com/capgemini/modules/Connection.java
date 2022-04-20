@@ -107,6 +107,14 @@ public class Connection {
 		this.customerConnection = customerConnection;
 	}
 
+	public boolean isConnectionStatus() {
+		return connectionStatus;
+	}
+
+	public void setConnectionStatus(boolean connectionStatus) {
+		this.connectionStatus = connectionStatus;
+	}
+
 	@Override
 	public String toString() {
 		return "Connection [connectionId=" + connectionId + ", consumerNumber=" + consumerNumber + ", applicationDate="

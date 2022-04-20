@@ -15,6 +15,7 @@ import com.capgemini.services.UserService;
 
 
 @RestController
+@RequestMapping("/uc")
 
 public class UserController {
 	
