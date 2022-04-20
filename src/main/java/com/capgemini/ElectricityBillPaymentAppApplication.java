@@ -10,14 +10,6 @@ public class ElectricityBillPaymentAppApplication {
 		SpringApplication.run(ElectricityBillPaymentAppApplication.class, args);
 		
 		System.out.println("table created");
-
-
-
-		
-   
-
-
-
  
 	}
 
