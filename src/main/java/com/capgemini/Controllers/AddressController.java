@@ -9,47 +9,49 @@
 //import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RestController;
 //
-//import com.capgemini.modules.Customer;
-//import com.capgemini.services.CustomerService;
+//import com.capgemini.modules.Address;
+//import com.capgemini.services.AddressService;
+//
+//
 //
 //@RestController
-//
-//public class CustomerController {
+//public class AddressController {
 //	
 //	@Autowired(required=true)
-//	CustomerService service;
+//	AddressService service;
 //	
-//	@RequestMapping(value="/customer",method=RequestMethod.GET)
-//	public List<Customer> getAllCustomer()
+//	@RequestMapping(value="/address",method=RequestMethod.GET)
+//	public List<Address> getAllAddress()
 //	{
-//		return  service.getAllCustomer();
+//		return  service.getAllAddress();
 //	}
 //	
-//	@RequestMapping(value="/customer/{id}",method=RequestMethod.GET)
-//	public Customer getCustomerById(@PathVariable int id)
+//	@RequestMapping(value="/address/{id}",method=RequestMethod.GET)
+//	public Address getAddressById(@PathVariable int id)
 //	{
-//		return service.getCustomerById(id);
+//		return service.getAddressById(id);
 //	}
 //	
 //	
 //	@RequestMapping(value="/add",method=RequestMethod.POST)
-//	public Customer addCustomer( @RequestBody  Customer e)
+//	public Address addAddress( @RequestBody  Address e)
 //	{
-//		return service.addCustomer(e);
+//		return service.addAddress(e);
 //		
 //	}
 //	
 //	@RequestMapping(value="/update/{id}",method=RequestMethod.PUT)
-//	public Customer updateCustomer(@PathVariable int id,@RequestBody Customer e)
+//	public Address updateAddress(@PathVariable int id,@RequestBody Address e)
 //	{
-//		return service.updateCustomer(id,e);
+//		return service.updateAddress(id,e);
 //	}
 //	
 //	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
-//	public void  deleteCustomer(@PathVariable int id)
+//	public void  deleteAddress(@PathVariable int id)
 //	{
-//		service.deleteCustomer(id);
+//		service.deleteAddress(id);
 //	}
 //
+//	
 //
 //}
