@@ -1,4 +1,4 @@
-package com.capgemini.models;
+package com.capgemini.modules;
 
 import java.time.LocalDate;
 
@@ -8,10 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+
 @Entity
 
+
 public class Reading {
-	@Id
+@Id
 private long readingId;
 private int unitsConsumed;
 private String readingPhoto;

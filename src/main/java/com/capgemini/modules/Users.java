@@ -1,17 +1,17 @@
-package com.capgemini.models;
+package com.capgemini.modules;
 
-import javax.persistence.Entity;
+
+
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Table;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-@Table(name="usertable")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+
+@MappedSuperclass
+@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 public class Users {
 	@Id
-
 	private long userId;
 	private String userName;
 	private String password;
@@ -24,8 +24,6 @@ public class Users {
 		this.userName = userName;
 		this.password = password;
 	}
-
-
 
 	public long getUserId() {
 		return userId;
@@ -54,4 +52,7 @@ public class Users {
 	
 	
 
+	
+	
+	
 }

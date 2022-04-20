@@ -1,16 +1,21 @@
-package com.capgemini.models;
+package com.capgemini.modules;
 
 import java.time.LocalDate;
 
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+
 @Entity
+
 public class Connection {
 	@Id
 	private long connectionId;
@@ -23,7 +28,7 @@ public class Connection {
 	@JoinColumn(referencedColumnName = "addressId" , name="addressid")
 	private Address connectionAddress;
 	
-	
+	@Autowired
 	private ConnectionType connectionType;
 	
 	@OneToOne(cascade = CascadeType.ALL)
@@ -100,6 +105,14 @@ public class Connection {
 
 	public void setCustomerConnection(Customer customerConnection) {
 		this.customerConnection = customerConnection;
+	}
+
+	public boolean isConnectionStatus() {
+		return connectionStatus;
+	}
+
+	public void setConnectionStatus(boolean connectionStatus) {
+		this.connectionStatus = connectionStatus;
 	}
 
 	@Override

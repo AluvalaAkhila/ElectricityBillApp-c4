@@ -1,4 +1,4 @@
-package com.capgemini.repositories;
+package com.repositories;
 
 public interface PaymentDao {
 

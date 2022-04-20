@@ -1,4 +1,4 @@
-package com.capgemini.models;
+package com.capgemini.modules;
 
 public enum PaymentMode {
 	CREDIT,DEBIT,WALLET,NETBANKING

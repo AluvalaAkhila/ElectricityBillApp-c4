@@ -1,4 +1,4 @@
-package com.capgemini.models;
+package com.capgemini.modules;
 
 import java.time.LocalDate;
 
@@ -8,8 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
+
+
+
 public class Payment {
+	
 	@Id
 	private long paymentId;
 	
@@ -19,13 +26,13 @@ public class Payment {
 	
 	private LocalDate paymentDate;
 	
-	
+	@Autowired
 	private PaymentMode paymentMode;
 	
 	private double latePaymentCharges;
 	private double totalPaid;
 	
-	
+	@Autowired
 	private PaymentStatus status;
 	
 	public Payment() {
