@@ -1,13 +1,13 @@
 package com.capgemini.modules;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
 
-
+import org.hibernate.validator.constraints.Length;
 @Entity
-
 public class Address {
-	@Id
+	
 	private long addressId;
 	private int faltOrHouseNumber;
 	private String buildingName;
@@ -16,11 +16,10 @@ public class Address {
 	private String taluka;
 	private String district;
 	private String state;
+	@Max(6)
 	private String pincode;
-	
 	public Address() {
 	}
-
 	public Address(long addressId, int faltOrHouseNumber, String buildingName, String landmark, String village,
 			String taluka, String district, String state, String pincode) {
 		this.addressId = addressId;
@@ -33,8 +32,7 @@ public class Address {
 		this.state = state;
 		this.pincode = pincode;
 	}
-
-	public long getAddressId() {
+public long getAddressId() {
 		return addressId;
 	}
 
