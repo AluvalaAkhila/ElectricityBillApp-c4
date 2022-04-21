@@ -5,9 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.capgemini.modules.Address;
+
 import com.capgemini.modules.Payment;
-import com.capgemini.repository.AddressRepository;
 import com.capgemini.repository.PaymentRepository;
 
 
