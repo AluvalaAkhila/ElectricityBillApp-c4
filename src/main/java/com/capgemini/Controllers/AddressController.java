@@ -36,7 +36,7 @@ public class AddressController {
 	
 	
 	@RequestMapping(value="/addaddress",method=RequestMethod.POST)
-	public  Address addAddress( @Validated @RequestBody  Address e)
+	public  Address addAddress( @RequestBody  Address e)
 	{
 		return service.addAddress(e);
 		

@@ -11,7 +11,6 @@ import javax.persistence.OneToOne;
 
 @Entity
 
-
 public class Reading {
 @Id
 private long readingId;
