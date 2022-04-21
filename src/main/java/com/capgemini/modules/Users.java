@@ -1,15 +1,10 @@
 package com.capgemini.modules;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
+import javax.persistence.InheritanceType;
 @MappedSuperclass
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 public class Users {
-	
 	private long userId;
 	private String userName;
 	private String password;

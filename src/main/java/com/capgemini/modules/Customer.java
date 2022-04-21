@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Customer extends Users {
-   @Id
+@Id
 	private long customerId;
     private long aadharNumber;
 	private	String firstName;

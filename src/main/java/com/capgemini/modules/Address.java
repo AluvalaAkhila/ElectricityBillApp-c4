@@ -2,12 +2,9 @@ package com.capgemini.modules;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Length;
 @Entity
 public class Address {
-	
+	@Id
 	private long addressId;
 	private int faltOrHouseNumber;
 	private String buildingName;
@@ -16,7 +13,7 @@ public class Address {
 	private String taluka;
 	private String district;
 	private String state;
-	@Max(6)
+	@Max(value=6,message="invalid length")
 	private String pincode;
 	public Address() {
 	}
