@@ -1,6 +1,7 @@
 package com.capgemini.modules;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 
 public class Customer extends Users {
    
+	@Id
 	private long customerId;
     private long aadharNumber;
 	private	String firstName;
