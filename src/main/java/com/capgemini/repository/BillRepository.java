@@ -3,10 +3,9 @@ package com.capgemini.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.capgemini.modules.Customer;
-
-
+import com.capgemini.modules.Bill;
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer , Long> {
+
+public interface BillRepository extends JpaRepository<Bill , Long>{
 
 }

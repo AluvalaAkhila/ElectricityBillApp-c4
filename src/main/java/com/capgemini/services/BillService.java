@@ -5,42 +5,43 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.capgemini.modules.Reading;
-import com.capgemini.repository.ReadingRepository;
+import com.capgemini.modules.Bill;
+import com.capgemini.repository.BillRepository;
 
 @Service
-public class ReadingService {
 
+public class BillService {
 	
 	@Autowired(required=true)
-	ReadingRepository repository;
+	BillRepository repository;
 	
-	public List<Reading> getAllReading(){
+	
+	public List<Bill> getAllBill(){
 		return repository.findAll();
 	}
 	
-	public Reading getReadingById(long id)
+	public Bill getBillById(long id)
 	{
 		return repository.findById(id).get();
 	}
 	
-	public Reading addReading( Reading e)
+	public Bill addBill(Bill e)
 	{
 		return repository.save(e);
 	}
 	
 	
 	
-	public Reading updateReading(long id,Reading e)
+	public Bill updateBill(long id,Bill e)
 	{
-		Reading e1 = repository.findById(id).get();
+		Bill e1 = repository.findById(id).get();
 		if(e1 !=null)
 		{
 			e1.setUnitsConsumed( e.getUnitsConsumed());
-			e1.setReadingPhoto(e.getReadingPhoto());
-			e1.setReadingDate(e.getReadingDate());
-			e1.setPricePerUnits(e.getPricePerUnits());
-			e1.setReadingForConnection(e.getReadingForConnection());
+			e1.setBillDate(e.getBillDate());
+			e1.setBillDueDate(e.getBillDueDate());
+			e1.setBillAmount(e.getBillAmount());
+			e1.setBillForReading(e.getBillForReading());
 
 					
 			return repository.save(e1);
@@ -49,9 +50,9 @@ public class ReadingService {
 			return e1;
 	}
 	
-	public void deleteReading(long id)
+	public void deleteBill(long id)
 	{
-	Reading e1 = repository.findById(id).get();
+	Bill e1 = repository.findById(id).get();
 	
 	if(e1 ==null)
 	{

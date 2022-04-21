@@ -19,7 +19,7 @@ public class ConnectionService {
 		return repository.findAll();
 	}
 	
-	public Connection getConnectionById(int id)
+	public Connection getConnectionById(long id)
 	{
 		return repository.findById(id).get();
 	}
@@ -31,7 +31,7 @@ public class ConnectionService {
 	
 	
 	
-	public Connection updateConnection(int id,Connection e)
+	public Connection updateConnection(long id,Connection e)
 	{
 		Connection e1 = repository.findById(id).get();
 		if(e1 !=null)
@@ -50,7 +50,7 @@ public class ConnectionService {
 			return e1;
 	}
 	
-	public void deleteConnection(int id)
+	public void deleteConnection(long id)
 	{
 	Connection e1 = repository.findById(id).get();
 	
@@ -62,7 +62,6 @@ public class ConnectionService {
 		repository.delete(e1);
 	    System.out.println("deletion sucessfull");
 	}
-
 
 
 }

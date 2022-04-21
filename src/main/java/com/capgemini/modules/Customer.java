@@ -1,14 +1,10 @@
 package com.capgemini.modules;
 
-
-
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.MapsId;
-
 
 @Entity
+
+
 
 public class Customer extends Users {
    

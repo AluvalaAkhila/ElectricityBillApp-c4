@@ -26,7 +26,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value="/customer/{id}",method=RequestMethod.GET)
-	public Customer getCustomerById(@PathVariable int id)
+	public Customer getCustomerById(@PathVariable long id)
 	{
 		return service.getCustomerById(id);
 	}
@@ -40,13 +40,13 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value="/update/{id}",method=RequestMethod.PUT)
-	public Customer updateCustomer(@PathVariable int id,@RequestBody Customer e)
+	public Customer updateCustomer(@PathVariable long id,@RequestBody Customer e)
 	{
 		return service.updateCustomer(id,e);
 	}
 	
 	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
-	public void  deleteCustomer(@PathVariable int id)
+	public void  deleteCustomer(@PathVariable long id)
 	{
 		service.deleteCustomer(id);
 	}

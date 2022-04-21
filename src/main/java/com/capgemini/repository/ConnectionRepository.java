@@ -8,6 +8,6 @@ import com.capgemini.modules.Connection;
 
 @Repository
 
-public interface ConnectionRepository extends JpaRepository<Connection , Integer>{
+public interface ConnectionRepository extends JpaRepository<Connection , Long>{
 
 }

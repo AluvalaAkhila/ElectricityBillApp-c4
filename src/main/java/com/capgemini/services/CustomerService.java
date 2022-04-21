@@ -1,9 +1,14 @@
+
+
 package com.capgemini.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+
+
 
 import com.capgemini.modules.Customer;
 import com.capgemini.repository.CustomerRepository;
@@ -19,7 +24,7 @@ public class CustomerService {
 		return repository.findAll();
 	}
 	
-	public Customer getCustomerById(int id)
+	public Customer getCustomerById(long id)
 	{
 		return repository.findById(id).get();
 	}
@@ -31,7 +36,7 @@ public class CustomerService {
 	
 	
 	
-	public Customer updateCustomer(int id,Customer e)
+	public Customer updateCustomer(long id,Customer e)
 	{
 		Customer e1 = repository.findById(id).get();
 		if(e1 !=null)
@@ -51,7 +56,7 @@ public class CustomerService {
 			return e1;
 	}
 	
-	public void deleteCustomer(int id)
+	public void deleteCustomer(long id)
 	{
 	Customer e1 = repository.findById(id).get();
 	
@@ -63,7 +68,4 @@ public class CustomerService {
 		repository.delete(e1);
 	    System.out.println("deletion sucessfull");
 	}
-
-
-
 }
