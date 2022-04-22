@@ -2,6 +2,8 @@ package com.capgemini.modules;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -9,6 +11,7 @@ import javax.persistence.Id;
 public class Address {
 	@Id
 	private long addressId;
+	
 	private int faltOrHouseNumber;
 	private String buildingName;
 	private String landmark;

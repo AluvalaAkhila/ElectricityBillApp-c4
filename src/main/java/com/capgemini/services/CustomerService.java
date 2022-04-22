@@ -3,13 +3,13 @@
 package com.capgemini.services;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
-
+import com.capgemini.exception.CustomerAlreadyExistsException;
 import com.capgemini.modules.Customer;
 import com.capgemini.repository.CustomerRepository;
 
@@ -26,12 +26,22 @@ public class CustomerService {
 	
 	public Customer getCustomerById(long id)
 	{
-		return repository.findById(id).get();
+		return ( repository.findById(id).orElseThrow(()->new NoSuchElementException("No customer present with id="+id)));
 	}
 	
 	public Customer addCustomer( Customer e)
 	{
-		return repository.save(e);
+		Customer exisitingCustomer=repository.findById(e.getCustomerId()).orElse(null);
+		if(exisitingCustomer==null) {
+			
+			return repository.save(e);
+			
+		}
+		else
+		{
+			throw new CustomerAlreadyExistsException("Customer already exist!!");
+		}
+		
 	}
 	
 	

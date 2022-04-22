@@ -1,6 +1,8 @@
 package com.capgemini.modules;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 
@@ -9,6 +11,7 @@ import javax.persistence.Entity;
 public class Customer extends Users {
    
 	private long customerId;
+	
     private long aadharNumber;
 	private	String firstName;
 	private String middleName;

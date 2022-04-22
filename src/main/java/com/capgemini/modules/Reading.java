@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 
 @Entity
@@ -14,8 +18,12 @@ import javax.persistence.OneToOne;
 
 public class Reading {
 @Id
+
+@Digits(integer=12,fraction=0,message="readingid should be of 12 digits")
 private long readingId;
+@Max(value=1000,message="unitsconsumed maximun value is 1000")
 private int unitsConsumed;
+@NotEmpty(message="readingphoto can not be empty")
 private String readingPhoto;
 private LocalDate readingDate;
 private int pricePerUnits;

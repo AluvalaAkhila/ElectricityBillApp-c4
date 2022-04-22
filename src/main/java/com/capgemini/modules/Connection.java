@@ -122,6 +122,9 @@ public class Connection {
 				+ ", connectionAddress=" + connectionAddress + ", connectionType=" + connectionType
 				+ ", customerConnection=" + customerConnection + "]";
 	}
+
+	
+	
 	
 	
 

@@ -50,6 +50,11 @@ dependencies {
    
    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation:2.6.6'
+	// https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
+    //implementation 'org.hibernate.validator:hibernate-validator:7.0.2.Final'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
+    implementation group: 'org.hibernate', name: 'hibernate-validator', version: '7.0.4.Final'
+	
    
 	
 }
