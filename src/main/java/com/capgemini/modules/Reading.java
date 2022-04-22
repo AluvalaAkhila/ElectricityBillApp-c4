@@ -7,15 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 
 @Entity
 
-
 public class Reading {
 @Id
+@Digits(integer=5,fraction=0,message="readingId is only 5digits")
 private long readingId;
 private int unitsConsumed;
+@NotEmpty(message="this should be filled")
 private String readingPhoto;
 private LocalDate readingDate;
 private int pricePerUnits;

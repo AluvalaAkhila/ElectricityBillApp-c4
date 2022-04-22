@@ -2,15 +2,13 @@ package com.capgemini.modules;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Pattern;
 
 @Entity
-
-
-
 public class Customer extends Users {
-   
-	@Id
+@Id
 	private long customerId;
+@Pattern(regexp="[0-9]{12}")
     private long aadharNumber;
 	private	String firstName;
 	private String middleName;

@@ -35,7 +35,7 @@ public class AddressService {
 		Address e1 = repository.findById(id).get();
 		if(e1 !=null)
 		{
-			e1.setFaltOrHouseNumber( e.getFaltOrHouseNumber());
+			e1.setFlatOrHouseNumber( e.getFlatOrHouseNumber());
 			e1.setBuildingName(e.getBuildingName());
 			e1.setLandmark(e.getLandmark());
 			e1.setVillage(e.getVillage());

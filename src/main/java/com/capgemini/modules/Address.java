@@ -2,29 +2,43 @@ package com.capgemini.modules;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-
+import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 @Entity
-
+@Table(name="address")
 public class Address {
 	@Id
+	@Digits(integer=5,fraction=0,message="addressId is only 5digits")
 	private long addressId;
-	private int faltOrHouseNumber;
+	@Digits(integer=8,fraction=0,message="flatno is exceeded 8digits")
+	private int flatOrHouseNumber;
+	@Pattern(regexp="[A-Za-z_]*",message="invalid symbols")
 	private String buildingName;
+	@Pattern(regexp="[a-zA-Z]*[0-9]{1}",message="invalid special chars")
 	private String landmark;
+	@Pattern(regexp="[A-Za-z_]*",message="invalid symbolsare not allowed village")
 	private String village;
+	@Pattern(regexp="[A-Za-z0-9]*",message="invalid symbols in taluka")
 	private String taluka;
+	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid sentence format,please start with uppercase")
 	private String district;
+	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid sentence format,please start with uppercase")
 	private String state;
+	@Pattern(regexp="[0-9]{6}",message="only numbers are allowed in pincode")
 	private String pincode;
 	
 	public Address() {
 	}
 
-	public Address(long addressId, int faltOrHouseNumber, String buildingName, String landmark, String village,
+	public Address(long addressId, int flatOrHouseNumber, String buildingName, String landmark, String village,
 			String taluka, String district, String state, String pincode) {
 		this.addressId = addressId;
-		this.faltOrHouseNumber = faltOrHouseNumber;
+		this.flatOrHouseNumber = flatOrHouseNumber;
 		this.buildingName = buildingName;
 		this.landmark = landmark;
 		this.village = village;
@@ -42,12 +56,12 @@ public class Address {
 		this.addressId = addressId;
 	}
 
-	public int getFaltOrHouseNumber() {
-		return faltOrHouseNumber;
+	public int getFlatOrHouseNumber() {
+		return flatOrHouseNumber;
 	}
 
-	public void setFaltOrHouseNumber(int faltOrHouseNumber) {
-		this.faltOrHouseNumber = faltOrHouseNumber;
+	public void setFlatOrHouseNumber(int flatOrHouseNumber) {
+		this.flatOrHouseNumber = flatOrHouseNumber;
 	}
 
 	public String getBuildingName() {
@@ -108,12 +122,9 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [addressId=" + addressId + ", faltOrHouseNumber=" + faltOrHouseNumber + ", buildingName="
+		return "Address [addressId=" + addressId + ", flatOrHouseNumber=" + flatOrHouseNumber + ", buildingName="
 				+ buildingName + ", landmark=" + landmark + ", village=" + village + ", taluka=" + taluka
 				+ ", district=" + district + ", state=" + state + ", pincode=" + pincode + "]";
 	}
-	
-	
-	
 
 }

@@ -18,14 +18,11 @@ public class Bill {
 	private LocalDate billDueDate;
 	private int unitsConsumed;
 	private int billAmount;
-	
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "readingId" , name="readingid")
 	private Reading billForReading;
-	
 	public Bill() {
 	}
-
 	public Bill(long billId, LocalDate billDate, LocalDate billDueDate, int unitsConsumed, int billAmount,
 			Reading billForReading) {
 		this.billId = billId;
@@ -35,11 +32,9 @@ public class Bill {
 		this.billAmount = billAmount;
 		this.billForReading = billForReading;
 	}
-
 	public long getBillId() {
 		return billId;
 	}
-
 	public void setBillId(long billId) {
 		this.billId = billId;
 	}
