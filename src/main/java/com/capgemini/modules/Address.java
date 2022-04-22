@@ -3,6 +3,7 @@ package com.capgemini.modules;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -12,25 +13,23 @@ import javax.validation.constraints.Size;
 @Table(name="address")
 public class Address {
 	@Id
-	//@Pattern(regexp="[0-9]{5}")
-	//@Size(max=5,min=5)
-	//@NotEmpty
+	@Digits(integer=5,fraction=0,message="addressId is only 5digits")
 	private long addressId;
-	//@Pattern(regexp="[0-9]*")
+	@Digits(integer=8,fraction=0,message="flatno is exceeded 8digits")
 	private int flatOrHouseNumber;
 	@Pattern(regexp="[A-Za-z_]*",message="invalid symbols")
 	private String buildingName;
 	@Pattern(regexp="[a-zA-Z]*[0-9]{1}",message="invalid special chars")
 	private String landmark;
-	@Pattern(regexp="[A-Za-z_]*",message="invalid symbols")
+	@Pattern(regexp="[A-Za-z_]*",message="invalid symbolsare not allowed village")
 	private String village;
-	@Pattern(regexp="[A-Za-z0-9]*",message="invalid symbols")
+	@Pattern(regexp="[A-Za-z0-9]*",message="invalid symbols in taluka")
 	private String taluka;
-	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid sentence")
+	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid sentence format,please start with uppercase")
 	private String district;
-	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid sentence")
+	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid sentence format,please start with uppercase")
 	private String state;
-	@Pattern(regexp="[0-9]{6}",message="only numbers allowed")
+	@Pattern(regexp="[0-9]{6}",message="only numbers are allowed in pincode")
 	private String pincode;
 	
 	public Address() {
