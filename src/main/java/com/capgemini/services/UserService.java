@@ -7,6 +7,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.capgemini.exception.CustomerAlreadyExistsException;
+import com.capgemini.exception.NoSuchPaymentExistsException;
+import com.capgemini.exception.NoSuchUserException;
+import com.capgemini.exception.UserAlreadyExistsException;
+import com.capgemini.modules.Customer;
 import com.capgemini.modules.Users;
 import com.capgemini.repository.UserRepository;
 
@@ -23,12 +28,22 @@ public class UserService {
 	
 	public Users getUsersById(long id)
 	{
-		return repository.findById(id).get();
+		return repository.findById(id).orElseThrow(()->new NoSuchUserException("No such user present with id="+id));
 	}
 	
 	public Users addUsers( Users e)
 	{
-		return repository.save(e);
+		Users exisitingUsers=repository.findById(e.getUserId()).orElse(null);
+		if(exisitingUsers==null) {
+			
+			return repository.save(e);
+			
+		}
+		else
+		{
+			throw new UserAlreadyExistsException("User already exist!!");
+		}
+		
 	}
 	
 	

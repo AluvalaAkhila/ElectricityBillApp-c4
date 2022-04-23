@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.capgemini.exception.CustomerAlreadyExistsException;
+import com.capgemini.exception.NoSuchCustomerExistsException;
 import com.capgemini.modules.Customer;
 import com.capgemini.repository.CustomerRepository;
 
@@ -26,7 +27,7 @@ public class CustomerService {
 	
 	public Customer getCustomerById(long id)
 	{
-		return ( repository.findById(id).orElseThrow(()->new NoSuchElementException("No customer present with id="+id)));
+		return ( repository.findById(id).orElseThrow(()->new NoSuchCustomerExistsException("No customer present with id="+id)));
 	}
 	
 	public Customer addCustomer( Customer e)

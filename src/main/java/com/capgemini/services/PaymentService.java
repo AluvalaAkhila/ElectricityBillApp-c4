@@ -5,8 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.capgemini.exception.CustomerAlreadyExistsException;
+import com.capgemini.exception.NoSuchCustomerExistsException;
+import com.capgemini.exception.NoSuchPaymentExistsException;
+import com.capgemini.exception.PaymentAlreadyExistsException;
+import com.capgemini.exception.UserAlreadyExistsException;
 import com.capgemini.modules.Address;
+import com.capgemini.modules.Customer;
 import com.capgemini.modules.Payment;
+import com.capgemini.modules.Users;
 import com.capgemini.repository.AddressRepository;
 import com.capgemini.repository.PaymentRepository;
 
@@ -22,12 +29,22 @@ PaymentRepository repository;
 	
 	public Payment getPaymentById(long id)
 	{
-		return repository.findById(id).get();
+		return repository.findById(id).orElseThrow(()->new NoSuchPaymentExistsException("No payment present with id="+id));
 	}
 	
 	public Payment addPayment( Payment p)
 	{
-		return repository.save(p);
+		Payment exisitingPayment=repository.findById(p.getPaymentId()).orElse(null);
+		if(exisitingPayment==null) {
+			
+			return repository.save(p);
+			
+		}
+		else
+		{
+			throw new PaymentAlreadyExistsException("payment already exist!!");
+		}
+			
 	}
 	public Payment updatePayment(long id,Payment p)
 	{

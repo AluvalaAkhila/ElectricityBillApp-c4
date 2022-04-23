@@ -5,6 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.capgemini.exception.NoSuchPaymentExistsException;
+import com.capgemini.exception.NoSuchReadingExistsException;
+import com.capgemini.exception.PaymentAlreadyExistsException;
+import com.capgemini.exception.ReadingAlreadyExistsException;
+import com.capgemini.modules.Payment;
 import com.capgemini.modules.Reading;
 import com.capgemini.repository.ReadingRepository;
 
@@ -21,12 +26,22 @@ public class ReadingService {
 	
 	public Reading getReadingById(long id)
 	{
-		return repository.findById(id).get();
+		return repository.findById(id).orElseThrow(()->new NoSuchReadingExistsException("No such reading present with id="+id));
 	}
 	
 	public Reading addReading( Reading e)
 	{
-		return repository.save(e);
+		Reading exisitingReading=repository.findById(e.getReadingId()).orElse(null);
+		if(exisitingReading==null) {
+			
+			return repository.save(e);
+			
+		}
+		else
+		{
+			throw new ReadingAlreadyExistsException("reading already exist!!");
+		}
+		
 	}
 	
 	

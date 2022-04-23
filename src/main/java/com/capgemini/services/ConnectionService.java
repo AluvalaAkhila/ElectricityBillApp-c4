@@ -5,7 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.capgemini.exception.ConnectionAlreadyExistsException;
+import com.capgemini.exception.ConnectionIdNotExistsException;
+import com.capgemini.exception.CustomerAlreadyExistsException;
+import com.capgemini.exception.NoSuchCustomerExistsException;
 import com.capgemini.modules.Connection;
+import com.capgemini.modules.Customer;
 import com.capgemini.repository.ConnectionRepository;
 
 @Service
@@ -21,12 +26,22 @@ public class ConnectionService {
 	
 	public Connection getConnectionById(long id)
 	{
-		return repository.findById(id).get();
+		return repository.findById(id).orElseThrow(()->new ConnectionIdNotExistsException("No such connection id present="+id));
 	}
 	
 	public Connection addConnection( Connection e)
 	{
-		return repository.save(e);
+		Connection exisitingConnection=repository.findById(e.getConnectionId()).orElse(null);
+		if(exisitingConnection==null) {
+			
+			return repository.save(e);
+			
+		}
+		else
+		{
+			throw new ConnectionAlreadyExistsException("Customer already exist!!");
+		}
+		
 	}
 	
 	
