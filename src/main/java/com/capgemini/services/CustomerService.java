@@ -7,9 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
-
+import com.capgemini.exception.IdAlreadyExistsException;
+import com.capgemini.exception.NoSuchCustomerExistsException;
 import com.capgemini.modules.Customer;
 import com.capgemini.repository.CustomerRepository;
 
@@ -23,18 +22,25 @@ public class CustomerService {
 	public List<Customer> getAllCustomer(){
 		return repository.findAll();
 	}
-	
 	public Customer getCustomerById(long id)
 	{
-		return repository.findById(id).get();
+		return ( repository.findById(id).orElseThrow(()->new NoSuchCustomerExistsException("No customer present with id="+id)));
 	}
 	
 	public Customer addCustomer( Customer e)
 	{
-		return repository.save(e);
+		Customer exisitingCustomer=repository.findById(e.getCustomerId()).orElse(null);
+		if(exisitingCustomer==null) {
+			
+			return repository.save(e);
+			
+		}
+		else
+		{
+			throw new IdAlreadyExistsException("Customer already exist with this Id!!");
+		}
+		
 	}
-	
-	
 	
 	public Customer updateCustomer(long id,Customer e)
 	{
