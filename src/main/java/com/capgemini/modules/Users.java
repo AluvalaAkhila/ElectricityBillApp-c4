@@ -2,13 +2,27 @@ package com.capgemini.modules;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+
+
+
+
+
 
 @MappedSuperclass
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 public class Users {
 
-	private long userId;
+
+	
+	public long userId;
+	@NotNull(message="This field should not be empty")
+	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid userName, First letter should be caps ")
 	private String userName;
+	@NotNull(message="This field should not be empty")
+	@Pattern(regexp="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@#*\\/&!¿?¡+%()=-])(.{8,})",message="invalid password,it should have one uppercase one lowercase one special character one number")
 	private String password;
 	
 	public Users() {

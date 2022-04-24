@@ -33,7 +33,7 @@ public class CustomerController {
 	
 	
 	@RequestMapping(value="/addcustomer",method=RequestMethod.POST)
-	public Customer addCustomer( @RequestBody  Customer e)
+	public Customer addCustomer( @RequestBody  Customer e) throws Exception
 	{
 		return service.addCustomer(e);
 		
