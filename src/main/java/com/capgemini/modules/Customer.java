@@ -8,13 +8,12 @@ import javax.validation.constraints.Pattern;
 public class Customer extends Users {
 @Id
 	private long customerId;
-@Pattern(regexp="[0-9]{12}")
     private long aadharNumber;
 	private	String firstName;
 	private String middleName;
 	private String lastName;
 	private String email;
-	private long mobileNumber;
+	private String mobileNumber;
 	private String gender;
 	
 	
@@ -23,7 +22,7 @@ public class Customer extends Users {
 
 
 	public Customer(long customerId, long aadharNumber, String firstName, String middleName, String lastName,
-			String email, long mobileNumber, String gender) {
+			String email, String mobileNumber, String gender) {
 		
 		this.customerId = customerId;
 		this.aadharNumber = aadharNumber;
@@ -96,12 +95,12 @@ public class Customer extends Users {
 	}
 
 
-	public long getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
 
 
-	public void setMobileNumber(long mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 
@@ -122,6 +121,9 @@ public class Customer extends Users {
 				+ ", middleName=" + middleName + ", lastName=" + lastName + ", email=" + email + ", mobileNumber="
 				+ mobileNumber + ", gender=" + gender + "]";
 	}
+
+
+	
 	
 	
 	

@@ -9,17 +9,21 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
 @Entity
 @Table(name="address")
 public class Address {
 	@Id
-	@Digits(integer=5,fraction=0,message="addressId is only 5digits")
+	//@Digits(integer=5,fraction=0,message="addressId is only 5digits")
+	@Range(max=99999,min=10000,message="AddressId must be 5 digits")
 	private long addressId;
 	@Digits(integer=8,fraction=0,message="flatno is exceeded 8digits")
 	private int flatOrHouseNumber;
 	@Pattern(regexp="[A-Za-z_]*",message="invalid symbols")
+	//@Pattern(regexp="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@#*\\/&!¿?¡+%()=-])(.{8,})",message="give valid password")
 	private String buildingName;
-	@Pattern(regexp="[a-zA-Z]*[0-9]{1}",message="invalid special chars")
+	@Pattern(regexp="[a-zA-Z0-9]*",message="invalid special chars")
 	private String landmark;
 	@Pattern(regexp="[A-Za-z_]*",message="invalid symbolsare not allowed village")
 	private String village;
@@ -125,6 +129,8 @@ public class Address {
 		return "Address [addressId=" + addressId + ", flatOrHouseNumber=" + flatOrHouseNumber + ", buildingName="
 				+ buildingName + ", landmark=" + landmark + ", village=" + village + ", taluka=" + taluka
 				+ ", district=" + district + ", state=" + state + ", pincode=" + pincode + "]";
+	
+		
 	}
 
 }

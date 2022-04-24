@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.capgemini.exception.IdAlreadyExistsException;
+import com.capgemini.exception.IdNotFoundException;
+import com.capgemini.modules.Bill;
 import com.capgemini.modules.Payment;
 import com.capgemini.repository.PaymentRepository;
 
@@ -21,13 +23,27 @@ PaymentRepository repository;
 	
 	public Payment getPaymentById(long id)
 	{
-		return repository.findById(id).get();
-	}
+		return ( repository.findById(id).orElseThrow(()->new IdNotFoundException("No Payment present with id="+id)));
+		}
+//	{
+//		return repository.findById(id).get();
+//	}
+	public Payment addPayment( Payment p) {
+		Payment exisitingPayment=repository.findById(p.getPaymentId()).orElse(null);
+		if(exisitingPayment==null) {
+			
+			return repository.save(p);
+			
+		}
+		else
+		{
+			throw new IdAlreadyExistsException("Payment Id already exist!!");
+		}
 	
-	public Payment addPayment( Payment p)
-	{
-		return repository.save(p);
 	}
+//	{
+//		return repository.save(p);
+//	}
 	public Payment updatePayment(long id,Payment p)
 	{
 		Payment p1 = repository.findById(id).get();
