@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.capgemini.exception.IdNotFoundException;
 import com.capgemini.modules.Address;
+import com.capgemini.modules.Customer;
 import com.capgemini.services.AddressService;
 
 @RestController
@@ -29,8 +32,7 @@ public class AddressController {
 	}
 	
 	@RequestMapping(value="/address/{id}",method=RequestMethod.GET)
-	public Address getAddressById(@PathVariable long id)
-	{
+	public ResponseEntity<Address> getAddressById(@PathVariable long id) throws IdNotFoundException{
 		return service.getAddressById(id);
 	}
 	
@@ -47,13 +49,31 @@ public class AddressController {
 	{
 		return service.updateAddress(id,e);
 	}
-	
 	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
 	public void  deleteAddress(@PathVariable long id)
 	{
 		service.deleteAddress(id);
 	}
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+	@RequestMapping(value="/taluka/{Name}",method=RequestMethod.GET)
+	public List<Address> getAllAddressByName(@PathVariable String Name)
+	{
+		return service.getAllAddressByName(Name);
+	}
+	@RequestMapping(value="/village/{village}",method=RequestMethod.GET)
+	public List<Address> getAllAddressByVillage(@PathVariable String village)
+	{
+		return service.getAllAddressByVillage(village);
+	}
 	
-
+	
+	@RequestMapping(value="/district/{district}",method=RequestMethod.GET)
+	public List<Address> getAllAddressByDistrict(@PathVariable String district)
+	{
+		return service.getAllAddressByDistrict(district);
+	}
+	
+	
 }
+

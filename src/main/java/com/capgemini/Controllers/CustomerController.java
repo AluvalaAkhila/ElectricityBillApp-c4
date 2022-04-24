@@ -50,6 +50,39 @@ public class CustomerController {
 	{
 		service.deleteCustomer(id);
 	}
+///////////////////////////////////////////////////
+	
+	@RequestMapping(value="/user/{name}",method=RequestMethod.GET)
+	public Customer getCustomerByName(@PathVariable String name)
+	{
+		return service.getCustomerByName(name);
+	}
+	
+	@RequestMapping(value="/mobile/{name1}",method=RequestMethod.GET)
+	public Customer getCustomerByName1(@PathVariable String name1)
+	{
+		return service.getCustomerByName1(name1);
+	}
+	@RequestMapping(value="/email/{name2}",method=RequestMethod.GET)
+	public Customer getCustomerByName2(@PathVariable String name2)
+	{
+		return service.getCustomerByName2(name2);
+	}
+	@RequestMapping(value="/userid/{id}",method=RequestMethod.GET)
+	public Customer getCustomerById3(@PathVariable Long id)
+	{
+		return service.getCustomerById3(id);
+	}
+	@RequestMapping(value="/aadhar/{Number}",method=RequestMethod.GET)
+	public Customer getCustomerByNumber(@PathVariable Long Number)
+	{
+		return service.getCustomerByNumber(Number);
+	}
+	@RequestMapping(value="/firstName/{Name}",method=RequestMethod.GET)
+	public List<Customer> getAllCustomerByName3(@PathVariable String Name)
+	{
+		return service.getAllCustomerByName3(Name);
+	}
 
-
+	
 }
