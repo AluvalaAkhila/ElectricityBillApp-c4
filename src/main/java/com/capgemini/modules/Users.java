@@ -11,7 +11,7 @@ import javax.validation.constraints.Pattern;
 
 
 
-@MappedSuperclass
+@MappedSuperclass 
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 public class Users {
 
