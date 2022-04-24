@@ -7,6 +7,7 @@ public class ConnectionAlreadyExistsException extends RuntimeException{
 	{
 		super(msg);
 		this.message=msg;
+	
 	}
 
 }

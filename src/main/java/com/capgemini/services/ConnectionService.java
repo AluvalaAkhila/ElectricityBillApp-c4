@@ -76,6 +76,7 @@ public class ConnectionService {
 	else
 		repository.delete(e1);
 	    System.out.println("deletion sucessfull");
+	
 	}
 
 

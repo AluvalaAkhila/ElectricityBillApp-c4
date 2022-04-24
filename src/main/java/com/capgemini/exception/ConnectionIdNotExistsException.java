@@ -7,6 +7,7 @@ public class ConnectionIdNotExistsException extends RuntimeException {
 		super(msg);
 		this.message=msg;
 		
+	
 	}
 
 }
