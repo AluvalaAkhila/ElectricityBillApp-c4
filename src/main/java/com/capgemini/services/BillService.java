@@ -3,8 +3,12 @@ package com.capgemini.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.Repository;
 import org.springframework.stereotype.Service;
 
+import com.capgemini.exception.IdAlreadyExistsException;
+import com.capgemini.exception.IdNotFoundException;
+import com.capgemini.modules.Address;
 import com.capgemini.modules.Bill;
 import com.capgemini.repository.BillRepository;
 
@@ -22,16 +26,31 @@ public class BillService {
 	
 	public Bill getBillById(long id)
 	{
-		return repository.findById(id).get();
+	return ( repository.findById(id).orElseThrow(()->new IdNotFoundException("No bill present with id="+id)));
 	}
+//	{
+//		return repository.findById(id).get();
+//	}
 	
-	public Bill addBill(Bill e)
-	{
+	public Bill addBill(Bill e) {
+		
+	Bill exisitingBill=repository.findById(e.getBillId()).orElse(null);
+	if(exisitingBill==null) {
+		
 		return repository.save(e);
+		
 	}
+	else
+	{
+		throw new IdAlreadyExistsException("Bill Id already exist!!");
+	}
+}
 	
+//	{
+//		return repository.save(e);
+//	}
 	
-	
+		
 	public Bill updateBill(long id,Bill e)
 	{
 		Bill e1 = repository.findById(id).get();

@@ -26,14 +26,11 @@ public class Bill {
 	private int unitsConsumed;
 	@NotEmpty(message="billamount can not be empty")
 	private int billAmount;
-	
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "readingId" , name="readingid")
 	private Reading billForReading;
-	
 	public Bill() {
 	}
-
 	public Bill(long billId, LocalDate billDate, LocalDate billDueDate, int unitsConsumed, int billAmount,
 			Reading billForReading) {
 		this.billId = billId;
@@ -43,11 +40,9 @@ public class Bill {
 		this.billAmount = billAmount;
 		this.billForReading = billForReading;
 	}
-
 	public long getBillId() {
 		return billId;
 	}
-
 	public void setBillId(long billId) {
 		this.billId = billId;
 	}
