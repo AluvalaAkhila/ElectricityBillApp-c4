@@ -6,10 +6,10 @@ import javax.persistence.InheritanceType;
 @MappedSuperclass
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 public class Users {
-	private long userId;
+	public long userId;
 	@Pattern(regexp="[A-Za-z_$]*")
 	private String userName;
-	//@Pattern(regexp="[(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@#*\\/&!¿?¡+%()=-]).{8,}]",message="give valid password")
+	@Pattern(regexp="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@#*\\/&!¿?¡+%()=-])(.{8,})",message="give valid password")
 	private String password;
 	
 	public Users() {
