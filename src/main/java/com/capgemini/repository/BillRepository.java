@@ -14,7 +14,19 @@ import com.capgemini.modules.Customer;
 public interface BillRepository extends JpaRepository<Bill , Long>{
 	
 	
-	@Query(value="select e from Bill e where e.firstName=?1")
-	   public List<Bill> getAllCustomerByName3(@Param("firstName")String Name);
+	@Query("select e from Bill e where e.consumerNumber=?1")
+	public List<Bill> getAllBillByConsumerNumber(@Param("consumerNumber")Long consumerNumber);
+	
+	
+	@Query("select e from Bill e where e.email=?1")
+	public List<Bill> getAllBillByEmail(@Param("email")String email);
+
+	
+	@Query("select e from Bill e where e.mobileNumber=?1")
+	public List<Bill> getAllBillByMobileNumber(@Param("mobileNumber")String mobileNumber);
+
+
+
+
 
 }
