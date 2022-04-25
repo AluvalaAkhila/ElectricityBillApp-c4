@@ -27,7 +27,7 @@ public class Customer extends Users {
 	private String lastName;
 	@Email
 	private String email;
-	public long mobileNumber;
+	public String mobileNumber;
     public String gender;
 	
 	
@@ -36,7 +36,7 @@ public class Customer extends Users {
 
 
 	public Customer(long customerId, long aadharNumber, String firstName, String middleName, String lastName,
-			String email, long mobileNumber, String gender) {
+			String email, String mobileNumber, String gender) {
 		
 		this.customerId = customerId;
 		this.aadharNumber = aadharNumber;
@@ -109,12 +109,12 @@ public class Customer extends Users {
 	}
 
 
-	public long getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
 
 
-	public void setMobileNumber(long mobileNumber) {
+	public void setMobileNumber (String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 
