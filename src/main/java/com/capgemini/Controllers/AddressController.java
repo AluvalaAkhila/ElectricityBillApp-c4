@@ -65,15 +65,23 @@ public class AddressController {
 	public List<Address> getAllAddressByVillage(@PathVariable String village)
 	{
 		return service.getAllAddressByVillage(village);
-	}
-	
-	
+	}	
 	@RequestMapping(value="/district/{district}",method=RequestMethod.GET)
 	public List<Address> getAllAddressByDistrict(@PathVariable String district)
 	{
 		return service.getAllAddressByDistrict(district);
 	}
+	@RequestMapping(value="/pincode/{pincode}",method=RequestMethod.GET)
+	public List<Address> getAllAddressByPincode(@PathVariable String pincode)
+	{
+		return service.getAllAddressByPincode(pincode);
+	}
 	
+	@RequestMapping(value="/taluka/{taluka}",method=RequestMethod.GET)
+	public List<Address> getAllAddressByTaluka(@PathVariable String taluka)
+	{
+		return service.getAllAddressByTaluka(taluka);
+	}
 	
 }
 
