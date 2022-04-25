@@ -17,6 +17,9 @@ public interface AddressRepository extends JpaRepository<Address , Long> {
 	   public List<Address> getAllAddressByVillage(@Param("village")String village);
 	@Query(value="select e from Address e where e.district=?1")
 	   public List<Address> getAllAddressByDistrict(@Param("district")String district);
-
+	@Query(value="select e from Address e where e.pincode=?1")
+	public List<Address> getAllAddressByPincode(@Param("pincode")String pincode);
+	@Query(value="select e from Address e where e.taluka!=?1")
+	   public List<Address> getAllAddressByTaluka(@Param("taluka")String taluka);
 
 }

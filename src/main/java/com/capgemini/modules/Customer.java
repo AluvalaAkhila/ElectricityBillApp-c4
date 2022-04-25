@@ -1,20 +1,34 @@
 package com.capgemini.modules;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+
 @Entity
+
+
+
 public class Customer extends Users {
-@Id
-	private long customerId;
-    private long aadharNumber;
+   
+	@Id
+	public long customerId;
+    public long aadharNumber;
+    @NotNull(message="This field should not be empty")
+	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="Invalid firstName, First letter should be caps")
 	private	String firstName;
+	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="Invalid middleName, First letter should be caps")
 	private String middleName;
+	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="Invalid lastName,4 First letter should be caps")
 	private String lastName;
+	@Email
 	private String email;
-	private String mobileNumber;
-	private String gender;
+	public long mobileNumber;
+    public String gender;
 	
 	
 	public Customer() {
@@ -22,7 +36,7 @@ public class Customer extends Users {
 
 
 	public Customer(long customerId, long aadharNumber, String firstName, String middleName, String lastName,
-			String email, String mobileNumber, String gender) {
+			String email, long mobileNumber, String gender) {
 		
 		this.customerId = customerId;
 		this.aadharNumber = aadharNumber;
@@ -95,12 +109,12 @@ public class Customer extends Users {
 	}
 
 
-	public String getMobileNumber() {
+	public long getMobileNumber() {
 		return mobileNumber;
 	}
 
 
-	public void setMobileNumber(String mobileNumber) {
+	public void setMobileNumber(long mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 
@@ -121,13 +135,4 @@ public class Customer extends Users {
 				+ ", middleName=" + middleName + ", lastName=" + lastName + ", email=" + email + ", mobileNumber="
 				+ mobileNumber + ", gender=" + gender + "]";
 	}
-
-
-	
-	
-	
-	
-	
-	
-	
 }
