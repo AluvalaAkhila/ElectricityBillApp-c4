@@ -93,4 +93,14 @@ public class AddressService {
 	{
 		return repository.getAllAddressByDistrict(district);
 	}
+
+
+	public List<Address> getAllAddressByPincode(String pincode) {
+		return repository.getAllAddressByPincode(pincode);
+		
+	}
+	public List<Address> getAllAddressByTaluka(String taluka)
+	{
+		return repository.getAllAddressByTaluka(taluka);
+	}
 }

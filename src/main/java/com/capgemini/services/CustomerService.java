@@ -26,22 +26,60 @@ public class CustomerService {
 	{
 		return ( repository.findById(id).orElseThrow(()->new NoSuchCustomerExistsException("No customer present with id="+id)));
 	}
-	
-	public Customer addCustomer( Customer e)
+	public Customer addCustomer( Customer e) throws Exception
 	{
-		Customer exisitingCustomer=repository.findById(e.getCustomerId()).orElse(null);
-		if(exisitingCustomer==null) {
-			
-			return repository.save(e);
-			
-		}
-		else
+		if(!(e.userId >= 10000 && e.userId <= 99999))
 		{
-			throw new IdAlreadyExistsException("Customer already exist with this Id!!");
+			throw new Exception("Invalid UserId, userId should be 5 digit");
+		}
+		if(!(e.customerId >= 1000000 && e.customerId <= 9999999))
+		{
+			throw new Exception("Invalid customerId, customerId should be 7 digit");
+		}
+		if(!(String.valueOf(e.aadharNumber).length() == 12))
+		{
+			throw new Exception("Invalid aadharNumber, aadharNumber should be 12 digit");
 		}
 		
-	}
+		
+		if(!(String.valueOf(e.mobileNumber).length() == 10))
+		{
+			throw new Exception("Invalid mobileNumber, mobileNumber should be 10 digit");
+		}
+		
+		if(!e.gender.equalsIgnoreCase("Male") && !e.gender.equalsIgnoreCase("Female") && !e.gender.equalsIgnoreCase("Others"))
+		{
+			throw new Exception("Invalid gender");
+		}
+		
+		
+			Customer exisitingCustomer=repository.findById(e.getCustomerId()).orElse(null);
+			if(exisitingCustomer==null) {
+				
+				return repository.save(e);
+				
+			}
+			else
+			{
+				throw new IdAlreadyExistsException("Customer already exist with this Id!!");
+			}
+		}	
 	
+//	public Customer addCustomer( Customer e)
+//	{
+//		Customer exisitingCustomer=repository.findById(e.getCustomerId()).orElse(null);
+//		if(exisitingCustomer==null) {
+//			
+//			return repository.save(e);
+//			
+//		}
+//		else
+//		{
+//			throw new IdAlreadyExistsException("Customer already exist with this Id!!");
+//		}
+//		
+//	}
+//	
 	public Customer updateCustomer(long id,Customer e)
 	{
 		Customer e1 = repository.findById(id).get();
