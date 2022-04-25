@@ -40,8 +40,6 @@ public class CustomerService {
 		{
 			throw new Exception("Invalid aadharNumber, aadharNumber should be 12 digit");
 		}
-		
-		
 		if(!(String.valueOf(e.mobileNumber).length() == 10))
 		{
 			throw new Exception("Invalid mobileNumber, mobileNumber should be 10 digit");

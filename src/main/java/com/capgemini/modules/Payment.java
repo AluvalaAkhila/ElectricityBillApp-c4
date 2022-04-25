@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-
+import javax.validation.constraints.Max;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Payment {
 	
 	@Id
-	private long paymentId;
+	public long paymentId;
 	
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "billId" , name="billid")
@@ -29,8 +29,9 @@ public class Payment {
 	@Autowired
 	private PaymentMode paymentMode;
 	
+	@Max(value=1000,message= "if latepayment charges exceeds 1000 then current will be cutoff from thier respective building")
 	private double latePaymentCharges;
-	private double totalPaid;
+	public double totalPaid;
 	
 	@Autowired
 	private PaymentStatus status;

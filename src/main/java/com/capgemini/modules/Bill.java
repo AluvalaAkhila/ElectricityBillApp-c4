@@ -6,18 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotEmpty;
 @Entity
 public class Bill {
 	@Id
-	private long billId;
+	public long billId;
 	private LocalDate billDate;
 	private LocalDate billDueDate;
-	@Max(value=1000,message="unitsconsumed maximun value is 1000")
-	private int unitsConsumed;
-	@NotEmpty(message="billamount can not be empty")
+	public int unitsConsumed;
 	private int billAmount;
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "readingId" , name="readingid")

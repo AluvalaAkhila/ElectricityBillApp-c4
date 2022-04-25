@@ -34,7 +34,7 @@ public class ReadingController {
 	
 	
 	@RequestMapping(value="/addreading",method=RequestMethod.POST)
-	public Reading addReading( @RequestBody  Reading e)
+	public Reading addReading( @RequestBody  Reading e) throws Exception
 	{
 		return service.addReading(e);
 		

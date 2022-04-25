@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 import com.capgemini.exception.IdAlreadyExistsException;
 import com.capgemini.exception.IdNotFoundException;
 import com.capgemini.modules.Address;
-import com.capgemini.modules.Bill;
-import com.capgemini.modules.Customer;
 import com.capgemini.repository.AddressRepository;
 
 @Service
@@ -31,10 +29,21 @@ public class AddressService {
 		return ResponseEntity.ok().body(ad);
 	}
 	
-	public Address addAddress( Address e)
+	public Address addAddress( Address e) throws Exception
 	{
+		if(!(e.addressId >= 100000 && e.addressId <= 999999))
+		{
+			throw new Exception("Invalid addressId, addressId should be 6 digit");
+		}
+		
+		if(!(e.flatOrHouseNumber > 0 && e.addressId < 1000))
+		{
+			throw new Exception("Invalid flatOrHouseNumber, flatOrHouseNumber should be less than 1000");
+		}
+		
 		 Address exisitingAddress=repository.findById(e.getAddressId()).orElse(null);
-		if(exisitingAddress==null) {
+		if(exisitingAddress==null) 
+		{
 			
 			return repository.save(e);
 			

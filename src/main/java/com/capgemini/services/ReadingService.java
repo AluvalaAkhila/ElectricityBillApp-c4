@@ -26,8 +26,29 @@ public class ReadingService {
 		return repository.findById(id).orElseThrow(()->new NoSuchReadingExistsException("No such reading present with id="+id));
 	}
 	
-	public Reading addReading( Reading e)
+	public Reading addReading( Reading e) throws Exception
 	{
+		if(!(e.readingId >= 10000 && e.readingId <= 99999))
+		{
+			throw new Exception("Invalid readingId, readingId should be 5 digit");
+		}
+		
+		if(!e.readingPhoto.equalsIgnoreCase("Taken") && !e.readingPhoto.equalsIgnoreCase("NotTaken"))
+		{
+			throw new Exception("Invalid readingPhoto, it should contain only Taken and NotTaken");
+		}
+		
+		if(!(e.pricePerUnits >=1 && e.pricePerUnits <= 10))
+		{
+			throw new Exception("Invalid pricePerUnits, pricePerUnits should be less than 10 ruppees");
+		}
+		
+		if(!(e.unitsConsumed >= 0 && e.unitsConsumed <= 100000))
+		{
+			throw new Exception("Invalid unitsConsumed, unitsConsumed should be in the range 0 to 100000");
+		}
+		
+		
 		Reading exisitingReading=repository.findById(e.getReadingId()).orElse(null);
 		if(exisitingReading==null) {
 			

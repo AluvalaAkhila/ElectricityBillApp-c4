@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.capgemini.exception.IdAlreadyExistsException;
 import com.capgemini.exception.IdNotFoundException;
-import com.capgemini.modules.Bill;
 import com.capgemini.modules.Payment;
 import com.capgemini.repository.PaymentRepository;
 
@@ -28,7 +27,18 @@ PaymentRepository repository;
 //	{
 //		return repository.findById(id).get();
 //	}
-	public Payment addPayment( Payment p) {
+	public Payment addPayment( Payment p) throws Exception {
+		
+		if(!(p.paymentId >= 1000 && p.paymentId <= 9999))
+		{
+			throw new Exception("Invalid paymentId, paymentId should be 4 digit");
+		}
+		
+		if(!(p.totalPaid >= 0))
+		{
+			throw new Exception("Invalid totalPaid,some Amount should be paid definitely");
+		}
+		
 		Payment exisitingPayment=repository.findById(p.getPaymentId()).orElse(null);
 		if(exisitingPayment==null) {
 			

@@ -3,36 +3,32 @@ package com.capgemini.modules;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Range;
 @Entity
 @Table(name="address")
 public class Address {
 	@Id
-	//@Digits(integer=5,fraction=0,message="addressId is only 5digits")
-	@Range(max=99999,min=10000,message="AddressId must be 5 digits")
-	private long addressId;
-	@Digits(integer=8,fraction=0,message="flatno is exceeded 8digits")
-	private int flatOrHouseNumber;
+	public long addressId;
+	public int flatOrHouseNumber;
+	@NotNull(message = "This field should not be empty")
 	@Pattern(regexp="[A-Za-z_]*",message="invalid symbols")
-	//@Pattern(regexp="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@#*\\/&!¿?¡+%()=-])(.{8,})",message="give valid password")
 	private String buildingName;
+	@NotNull(message = "This field should not be empty")
 	@Pattern(regexp="[a-zA-Z0-9]*",message="invalid special chars")
 	private String landmark;
+	@NotNull(message="This field should not be empty")
 	@Pattern(regexp="[A-Za-z_]*",message="invalid symbolsare not allowed village")
 	private String village;
 	@Pattern(regexp="[A-Za-z0-9]*",message="invalid symbols in taluka")
 	private String taluka;
+	@NotNull(message="This field should not be empty")
 	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid sentence format,please start with uppercase")
 	private String district;
+	@NotNull
 	@Pattern(regexp="[A-Z]{1}[A-Za-z]*",message="invalid sentence format,please start with uppercase")
 	private String state;
+	@NotNull
 	@Pattern(regexp="[0-9]{6}",message="only numbers are allowed in pincode")
 	private String pincode;
 	
