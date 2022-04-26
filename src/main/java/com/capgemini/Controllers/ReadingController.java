@@ -57,9 +57,9 @@ public class ReadingController {
 	{
 		service.deleteReading(id);
 	}
-	@GetMapping("/findMeterReadingByConsumerNumberAndBillDate/{consumerNumber}/{billDate}")
-	public ResponseEntity<Object> findMeterReadingByConsumerNumberAndBillDate(@PathVariable("consumerNumber") Long consumerNumber,@RequestParam("billDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate billDate){
-		return new ResponseEntity<Object>(service.findMeterReadingByConsumerNumberAndBillDate(consumerNumber,billDate),HttpStatus.OK);
-	}
+//	@GetMapping("/findMeterReadingByConsumerNumberAndBillDate/{consumerNumber}/{billDate}")
+//	public ResponseEntity<Object> findMeterReadingByConsumerNumberAndBillDate(@PathVariable("consumerNumber") Long consumerNumber,@RequestParam("billDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate billDate){
+//		return new ResponseEntity<Object>(service.findMeterReadingByConsumerNumberAndBillDate(consumerNumber,billDate),HttpStatus.OK);
+	//}
 
 }

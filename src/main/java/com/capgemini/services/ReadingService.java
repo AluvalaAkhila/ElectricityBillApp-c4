@@ -93,8 +93,8 @@ public class ReadingService {
 		repository.delete(e1);
 	    System.out.println("deletion sucessfull");
 	}
-	public Reading findMeterReadingByConsumerNumberAndBillDate(Long consumerNumber, LocalDate billDate)
-	{
-		return repository.findMeterReadingByConsumerNumberAndBillDate(consumerNumber,billDate);
-	}
+//	public Reading findMeterReadingByConsumerNumberAndBillDate(Long consumerNumber, LocalDate billDate)
+//	{
+//		return repository.findMeterReadingByConsumerNumberAndBillDate(consumerNumber,billDate);
+//	}
 }

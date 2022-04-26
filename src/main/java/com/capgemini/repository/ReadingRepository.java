@@ -12,8 +12,8 @@ import com.capgemini.modules.Reading;
 @Repository
 
 public interface ReadingRepository extends JpaRepository<Reading , Long> {
-	@Query("select reading from Reading reading,Bill bill where reading.consumerNumber=:consumerNumber and bill.billDate=:billDate")
-	public Reading findMeterReadingByConsumerNumberAndBillDate(@Param("consumerNumber") Long consumerNumber, @Param("billDate") LocalDate billDate);
+//	@Query("select reading from Reading reading,Bill bill where reading.consumerNumber=:consumerNumber and bill.billDate=:billDate")
+//	public Reading findMeterReadingByConsumerNumberAndBillDate(@Param("consumerNumber") Long consumerNumber, @Param("billDate") LocalDate billDate);
 
 	
 
