@@ -1,7 +1,7 @@
 package com.capgemini.repository;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -14,7 +14,7 @@ import com.capgemini.modules.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer , Long> {
    @Query(value="select e from Customer e where e.userName=?1")
-//	//@Query(value="select * from customer e where e.aadhar_number=:aadharNumber",nativeQuery=true)
+//	@Query(value="select * from customer e where e.aadhar_number=:aadharNumber",nativeQuery=true)
 	public Customer getCustomerByName(@Param("userName")String name);
    @Query(value="select e from Customer e where e.mobileNumber=?1")
    public Customer getCustomerByName1(@Param("mobileNumber")String name1);

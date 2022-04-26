@@ -34,7 +34,7 @@ public class BillController {
 	
 	
 	@RequestMapping(value="/addbill",method=RequestMethod.POST)
-	public Bill addBill( @RequestBody  Bill e)
+	public Bill addBill( @RequestBody  Bill e) throws Exception
 	{
 		return service.addBill(e);
 		

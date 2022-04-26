@@ -1,14 +1,17 @@
 package com.capgemini.modules;
 import javax.persistence.Inheritance;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.persistence.InheritanceType;
 @MappedSuperclass
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 public class Users {
 	public long userId;
+	@NotNull
 	@Pattern(regexp="[A-Za-z_$]*")
 	private String userName;
+	@NotNull
 	@Pattern(regexp="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@#*\\/&!¿?¡+%()=-])(.{8,})",message="give valid password")
 	private String password;
 	

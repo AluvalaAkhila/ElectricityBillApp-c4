@@ -3,12 +3,11 @@ package com.capgemini.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.Repository;
+
 import org.springframework.stereotype.Service;
 
 import com.capgemini.exception.IdAlreadyExistsException;
 import com.capgemini.exception.IdNotFoundException;
-import com.capgemini.modules.Address;
 import com.capgemini.modules.Bill;
 import com.capgemini.modules.Customer;
 import com.capgemini.repository.BillRepository;
@@ -33,7 +32,22 @@ public class BillService {
 //		return repository.findById(id).get();
 //	}
 	
-	public Bill addBill(Bill e) {
+	public Bill addBill(Bill e) throws Exception {
+		
+		if(!(e.billId >= 10000000 && e.billId <= 99999999))
+		{
+			throw new Exception("Invalid billId, billId should be 8 digit");
+		}
+		
+		if(!(e.billId >= 0))
+		{
+			throw new Exception("Invalid billAmount");
+		}
+		
+		if(!(e.unitsConsumed >= 0 && e.unitsConsumed <= 100000))
+		{
+			throw new Exception("Invalid unitsConsumed, unitsConsumed should be in the range 0 to 100000");
+		}
 		
 	Bill exisitingBill=repository.findById(e.getBillId()).orElse(null);
 	if(exisitingBill==null) {

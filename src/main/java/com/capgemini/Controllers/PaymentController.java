@@ -30,7 +30,7 @@ public class PaymentController {
 			return service.getPaymentById(id);
 		}
 		@RequestMapping(value="/addpayment",method=RequestMethod.POST)
-		public Payment addPayment( @RequestBody  Payment p)
+		public Payment addPayment( @RequestBody  Payment p) throws Exception
 		{
 			return service.addPayment(p);
 			

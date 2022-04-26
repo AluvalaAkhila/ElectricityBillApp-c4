@@ -37,7 +37,7 @@ public class ConnectionController {
 	
 	
 	@RequestMapping(value="/addconnection",method=RequestMethod.POST)
-	public Connection addConnection( @RequestBody  Connection e)
+	public Connection addConnection( @RequestBody  Connection e) throws Exception
 	{
 		return service.addConnection(e);
 		

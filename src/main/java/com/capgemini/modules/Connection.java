@@ -6,22 +6,20 @@ import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.hibernate.validator.constraints.Range;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.Pattern;
+
 
 
 @Entity
 
 public class Connection {
 	@Id
-	@Range(min=10000,max=99999,message="Id must be 5digits")
-    long connectionId;
-	private long consumerNumber;
+	public long connectionId;
+	public long consumerNumber;
 	private LocalDate applicationDate;
 	private LocalDate connectionDate;
 	private  boolean connectionStatus;

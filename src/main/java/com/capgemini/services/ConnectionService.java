@@ -27,8 +27,18 @@ public class ConnectionService {
 		return repository.findById(id).orElseThrow(()->new ConnectionIdNotExistsException("No such connection id present="+id));
 	}
 	
-	public Connection addConnection( Connection e)
+	public Connection addConnection( Connection e) throws Exception
 	{
+		if(!(e.connectionId >= 100000 && e.connectionId <= 999999))
+		{
+			throw new Exception("Invalid connectionId, connectionId should be 6 digit");
+		}
+		
+		if(!(e.consumerNumber >= 10000 && e.consumerNumber <= 99999))
+		{
+			throw new Exception("Invalid consumerNumber, consumerNumber should be 5 digit");
+		}
+		
 		Connection exisitingConnection=repository.findById(e.getConnectionId()).orElse(null);
 		if(exisitingConnection==null) {
 			
@@ -65,6 +75,9 @@ public class ConnectionService {
 	
 	public void deleteConnection(long id)
 	{
+		
+		
+		
 	Connection e1 = repository.findById(id).get();
 	
 	if(e1 ==null)
