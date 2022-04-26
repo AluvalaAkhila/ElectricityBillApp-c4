@@ -15,18 +15,19 @@ import com.capgemini.modules.Customer;
 public interface CustomerRepository extends JpaRepository<Customer , Long> {
    @Query(value="select e from Customer e where e.userName=?1")
 //	@Query(value="select * from customer e where e.aadhar_number=:aadharNumber",nativeQuery=true)
-	public Customer getCustomerByName(@Param("userName")String name);
+	public Customer searchUserByUserName(@Param("userName")String name);
    @Query(value="select e from Customer e where e.mobileNumber=?1")
-   public Customer getCustomerByName1(@Param("mobileNumber")String name1);
-//   @Query(value="select e from Customer e where e.email=?1")
-//   public Customer getCustomerByName2(@Param("email")String name2);
+   public Customer searchCustomerByMobile(@Param("mobileNumber")String name1);
+   @Query(value="select e from Customer e where e.email=?1")
+   public Customer searchCustomerByEmail(@Param("email")String name2);
    @Query(value="select e from Customer e where e.userId=?1")
-   public Customer getCustomerById3(@Param("userId")Long name3);
+   public Customer searchUserByUserId(@Param("userId")Long name3);
    @Query(value="select e from Customer e where e.aadharNumber=?1")
-   public Customer getCustomerByNumber(@Param("aadharNumber")Long Number);
+   public Customer SearchCustomerByAadhar(@Param("aadharNumber")Long number);
 //////////////////////////////////////////////////////////////////////////////////////////////
    @Query(value="select e from Customer e where e.firstName=?1")
-   public List<Customer> getAllCustomerByName3(@Param("firstName")String Name);
+   public List<Customer> SearchCustomerByName(@Param("firstName")String Name);
+
 
    
 }

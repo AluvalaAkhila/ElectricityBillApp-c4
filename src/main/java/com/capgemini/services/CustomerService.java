@@ -111,29 +111,30 @@ public class CustomerService {
 	    System.out.println("deletion sucessfull");
 	}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-public Customer getCustomerByName(String name)
+public Customer searchUserByUserName(String name)
 {
-	return repository.getCustomerByName(name);
+	return repository.searchUserByUserName(name);
 }
 
-public Customer getCustomerByName1(String name1)
+public Customer searchCustomerByMobile(String name1)
 {
-	return repository.getCustomerByName1(name1);
+	return repository.searchCustomerByMobile(name1);
 }
-//public Customer getCustomerByName2(String name2)
-//{
-//	return repository.getCustomerByName2(name2);
-//}
-public Customer getCustomerById3(Long id)
+public Customer searchCustomerByEmail(String name2)
 {
-	return repository.getCustomerById3(id);
+	return repository.searchCustomerByEmail(name2);
 }
-public Customer getCustomerByNumber(Long Number)
+public Customer searchUserByUserId(Long id)
 {
-	return repository.getCustomerByNumber(Number);
+	return repository.searchUserByUserId(id);
 }
-public List<Customer> getAllCustomerByName3(String Name)
+public Customer SearchCustomerByAadhar(Long number)
 {
-	return repository.getAllCustomerByName3(Name);
+	return repository.SearchCustomerByAadhar(number);
+}
+public List<Customer> SearchCustomerByName(String Name)
+{
+	return repository.SearchCustomerByName(Name);
+
 }
 }

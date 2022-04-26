@@ -53,35 +53,35 @@ public class CustomerController {
 ///////////////////////////////////////////////////
 	
 	@RequestMapping(value="/user/{name}",method=RequestMethod.GET)
-	public Customer getCustomerByName(@PathVariable String name)
+	public Customer searchUserByUserName(@PathVariable String name)
 	{
-		return service.getCustomerByName(name);
+		return service.searchUserByUserName(name);
 	}
 	
 	@RequestMapping(value="/mobile/{name1}",method=RequestMethod.GET)
-	public Customer getCustomerByName1(@PathVariable String name1)
+	public Customer searchCustomerByMobile(@PathVariable String name1)
 	{
-		return service.getCustomerByName1(name1);
+		return service.searchCustomerByMobile(name1);
 	}
-//	@RequestMapping(value="/email/{name2}",method=RequestMethod.GET)
-//	public Customer getCustomerByName2(@PathVariable String name2)
-//	{
-//		return service.getCustomerByName2(name2);
-//	}
-	@RequestMapping(value="/userid/{id}",method=RequestMethod.GET)
-	public Customer getCustomerById3(@PathVariable Long id)
+	@RequestMapping(value="/email/{name2}",method=RequestMethod.GET)
+	public Customer searchCustomerByEmail(@PathVariable String name2)
 	{
-		return service.getCustomerById3(id);
+		return service.searchCustomerByEmail(name2);
+	}
+	@RequestMapping(value="/userid/{id}",method=RequestMethod.GET)
+	public Customer searchUserByUserId(@PathVariable Long id)
+	{
+		return service.searchUserByUserId(id);
 	}
 	@RequestMapping(value="/aadhar/{Number}",method=RequestMethod.GET)
-	public Customer getCustomerByNumber(@PathVariable Long Number)
+	public Customer SearchCustomerByAadhar(@PathVariable Long Number)
 	{
-		return service.getCustomerByNumber(Number);
+		return service.SearchCustomerByAadhar(Number);
 	}
 	@RequestMapping(value="/firstName/{Name}",method=RequestMethod.GET)
-	public List<Customer> getAllCustomerByName3(@PathVariable String Name)
+	public List<Customer> SearchCustomerByName(@PathVariable String Name)
 	{
-		return service.getAllCustomerByName3(Name);
+		return service.SearchCustomerByName(Name);
 	}
 
 	
