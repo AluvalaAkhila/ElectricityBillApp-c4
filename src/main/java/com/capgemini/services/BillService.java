@@ -10,6 +10,7 @@ import com.capgemini.exception.IdAlreadyExistsException;
 import com.capgemini.exception.IdNotFoundException;
 import com.capgemini.modules.Address;
 import com.capgemini.modules.Bill;
+import com.capgemini.modules.Customer;
 import com.capgemini.repository.BillRepository;
 
 @Service
@@ -81,5 +82,9 @@ public class BillService {
 		repository.delete(e1);
 	    System.out.println("deletion sucessfull");
 	}
+////////////////////////////////////////////////////////////////////////////////////
+//	public Bill ViewBillByEmail(String email) {
+//		return repository.ViewBillByEmail(email);
+//	}
 
 }

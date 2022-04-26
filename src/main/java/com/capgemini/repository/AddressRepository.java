@@ -11,15 +11,5 @@ import com.capgemini.modules.Address;
 
 @Repository
 public interface AddressRepository extends JpaRepository<Address , Long> {
-	@Query(value="select e from Address e where e.taluka=?1")
-	   public List<Address> getAllAddressByName(@Param("taluka")String Name);
-	@Query(value="select e from Address e where e.village=?1")
-	   public List<Address> getAllAddressByVillage(@Param("village")String village);
-	@Query(value="select e from Address e where e.district=?1")
-	   public List<Address> getAllAddressByDistrict(@Param("district")String district);
-	@Query(value="select e from Address e where e.pincode=?1")
-	public List<Address> getAllAddressByPincode(@Param("pincode")String pincode);
-	@Query(value="select e from Address e where e.taluka!=?1")
-	   public List<Address> getAllAddressByTaluka(@Param("taluka")String taluka);
-
+	
 }

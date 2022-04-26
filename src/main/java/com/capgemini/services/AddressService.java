@@ -78,29 +78,6 @@ public class AddressService {
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////////
-	public List<Address> getAllAddressByName(String Name)
-	{
-		return repository.getAllAddressByName(Name);
-	}
 	
-	public List<Address> getAllAddressByVillage(String village)
-	{
-		return repository.getAllAddressByVillage(village);
-	}
 
-	
-	public List<Address> getAllAddressByDistrict(String district)
-	{
-		return repository.getAllAddressByDistrict(district);
-	}
-
-
-	public List<Address> getAllAddressByPincode(String pincode) {
-		return repository.getAllAddressByPincode(pincode);
-		
-	}
-	public List<Address> getAllAddressByTaluka(String taluka)
-	{
-		return repository.getAllAddressByTaluka(taluka);
-	}
 }

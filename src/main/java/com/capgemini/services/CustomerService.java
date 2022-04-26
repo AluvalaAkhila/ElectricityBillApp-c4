@@ -122,10 +122,10 @@ public Customer getCustomerByName1(String name1)
 {
 	return repository.getCustomerByName1(name1);
 }
-public Customer getCustomerByName2(String name2)
-{
-	return repository.getCustomerByName2(name2);
-}
+//public Customer getCustomerByName2(String name2)
+//{
+//	return repository.getCustomerByName2(name2);
+//}
 public Customer getCustomerById3(Long id)
 {
 	return repository.getCustomerById3(id);
