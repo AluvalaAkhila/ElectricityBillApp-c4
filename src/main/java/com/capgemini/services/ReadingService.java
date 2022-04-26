@@ -1,5 +1,6 @@
 package com.capgemini.services;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,5 +72,8 @@ public class ReadingService {
 		repository.delete(e1);
 	    System.out.println("deletion sucessfull");
 	}
-
+	public Reading findMeterReadingByConsumerNumberAndBillDate(Long consumerNumber, LocalDate billDate)
+	{
+		return repository.findMeterReadingByConsumerNumberAndBillDate(consumerNumber,billDate);
+	}
 }

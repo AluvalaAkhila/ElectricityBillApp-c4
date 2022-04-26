@@ -17,7 +17,7 @@ public class Bill {
 	private LocalDate billDueDate;
 	@Max(value=1000,message="unitsconsumed maximun value is 1000")
 	private int unitsConsumed;
-	@NotEmpty(message="billamount can not be empty")
+	//@NotEmpty(message="billamount can not be empty")
 	private int billAmount;
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "readingId" , name="readingid")

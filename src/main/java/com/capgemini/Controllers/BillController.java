@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.modules.Bill;
+import com.capgemini.modules.Customer;
 import com.capgemini.services.BillService;
 
 @RestController
@@ -50,7 +51,12 @@ public class BillController {
 	{
 		service.deleteBill(id);
 	}
-
-	
+////////////////////////////////////////////////////////////////////////////////////////////
+//	@RequestMapping(value="/email/{email}",method=RequestMethod.GET)
+//	public Bill ViewBillByEmail(@PathVariable String email)
+//	{
+//		return service.ViewBillByEmail(email);
+//	}
+//	
 
 }
