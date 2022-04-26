@@ -18,8 +18,8 @@ public interface CustomerRepository extends JpaRepository<Customer , Long> {
 	public Customer getCustomerByName(@Param("userName")String name);
    @Query(value="select e from Customer e where e.mobileNumber=?1")
    public Customer getCustomerByName1(@Param("mobileNumber")String name1);
-   @Query(value="select e from Customer e where e.email=?1")
-   public Customer getCustomerByName2(@Param("email")String name2);
+//   @Query(value="select e from Customer e where e.email=?1")
+//   public Customer getCustomerByName2(@Param("email")String name2);
    @Query(value="select e from Customer e where e.userId=?1")
    public Customer getCustomerById3(@Param("userId")Long name3);
    @Query(value="select e from Customer e where e.aadharNumber=?1")

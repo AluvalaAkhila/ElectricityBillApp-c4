@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.capgemini.exception.ConnectionIdNotExistsException;
 import com.capgemini.exception.IdAlreadyExistsException;
+import com.capgemini.modules.Address;
 import com.capgemini.modules.Connection;
 import com.capgemini.repository.ConnectionRepository;
 
@@ -88,5 +89,54 @@ public class ConnectionService {
 	    System.out.println("deletion sucessfull");
 	}
 
+//////////////////////////////////////////////////////////////////////////////////////
+	public List<Connection> readActiveConnectionsByTaluka(String Name)
+	{
+		return repository.readActiveConnectionsByTaluka(Name);
+	}
+	
+	public List<Connection> readActiveConnectionsByVillage(String village)
+	{
+		return repository.readActiveConnectionsByVillage(village);
+	}
 
+	
+	public List<Connection> readActiveConnectionsByDistrict(String district)
+	{
+		return repository.readActiveConnectionsByDistrict(district);
+	}
+
+
+	public List<Connection> readActiveConnectionsByPincode(String pincode) {
+		return repository.readActiveConnectionsByPincode(pincode);
+		
+	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public List<Connection> readInactiveConnectionsByTaluka(String taluka)
+	{
+		return repository.readInactiveConnectionsByTaluka(taluka);
+	}
+
+
+	public List<Connection> readInactiveConnectionsByVillage1(String village) {
+		
+		return repository.readInactiveConnectionsByVillage1(village);
+	}
+
+
+	public List<Connection> readInactiveConnectionsByDistrict1(String district) {
+
+		return repository.readInactiveConnectionsByDistrict1(district);
+		
+	}
+
+
+	public List<Connection> readInactiveConnectionsByPincode1(String pincode) {
+		return repository.readInactiveConnectionsByPincode1(pincode);
+		
+		
+	}
+
+
+		
 }

@@ -63,11 +63,11 @@ public class CustomerController {
 	{
 		return service.getCustomerByName1(name1);
 	}
-	@RequestMapping(value="/email/{name2}",method=RequestMethod.GET)
-	public Customer getCustomerByName2(@PathVariable String name2)
-	{
-		return service.getCustomerByName2(name2);
-	}
+//	@RequestMapping(value="/email/{name2}",method=RequestMethod.GET)
+//	public Customer getCustomerByName2(@PathVariable String name2)
+//	{
+//		return service.getCustomerByName2(name2);
+//	}
 	@RequestMapping(value="/userid/{id}",method=RequestMethod.GET)
 	public Customer getCustomerById3(@PathVariable Long id)
 	{

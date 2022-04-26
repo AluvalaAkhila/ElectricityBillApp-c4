@@ -52,34 +52,6 @@ public class AddressController {
 	{
 		service.deleteAddress(id);
 	}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
-	@RequestMapping(value="/taluka/{Name}",method=RequestMethod.GET)
-	public List<Address> getAllAddressByName(@PathVariable String Name)
-	{
-		return service.getAllAddressByName(Name);
-	}
-	@RequestMapping(value="/village/{village}",method=RequestMethod.GET)
-	public List<Address> getAllAddressByVillage(@PathVariable String village)
-	{
-		return service.getAllAddressByVillage(village);
-	}	
-	@RequestMapping(value="/district/{district}",method=RequestMethod.GET)
-	public List<Address> getAllAddressByDistrict(@PathVariable String district)
-	{
-		return service.getAllAddressByDistrict(district);
-	}
-	@RequestMapping(value="/pincode/{pincode}",method=RequestMethod.GET)
-	public List<Address> getAllAddressByPincode(@PathVariable String pincode)
-	{
-		return service.getAllAddressByPincode(pincode);
-	}
-	
-	@RequestMapping(value="/taluka/{taluka}",method=RequestMethod.GET)
-	public List<Address> getAllAddressByTaluka(@PathVariable String taluka)
-	{
-		return service.getAllAddressByTaluka(taluka);
-	}
-	
 }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
+	
